@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced General Contractors (AGC) | Grade One Construction, Ethiopia</title>
+<meta name="description" content="Advanced General Contractors (AGC), formerly 7Set General Trading. Grade One general contractor delivering landmark projects across Ethiopia.">
+<meta property="og:title" content="Advanced General Contractors (AGC) | Grade One Construction, Ethiopia">
+<meta property="og:description" content="Grade One general contractor. All types of construction. The Ministry of Transport building at Megenagna, delivered in four months.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' fill='%230E0E0E'/%3E%3Cpolygon points='24,8 8,40 24,40' fill='%23E12500'/%3E%3Cpolygon points='24,8 40,40 24,40' fill='%23F5F5F5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.replace('no-js','js');</script>
+
+<style>
+/* ============================================================
+   OBSIDIAN. Dark industrial cinematic for AGC.
+   Tokens
+   ============================================================ */
+:root{
+  --bg:#0E0E0E;
+  --bg-2:#161616;
+  --hairline:#2A2A2A;
+  --gridline:#1D1D1D;
+  --ink:#F5F5F5;
+  --ink-soft:#BDBDBD;
+  --muted:#9A9A9A;
+  --red:#E12500;
+  --red-deep:#B81E00;
+  --font-display:'Anton', sans-serif;
+  --font-body:'Archivo', sans-serif;
+  --pad-x:clamp(20px, 4.5vw, 60px);
+  --ease-out:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+::selection{background:var(--red);color:#fff;}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:1px;}
+
+/* type helpers */
+.display{
+  font-family:var(--font-display);
+  font-weight:400;
+  text-transform:uppercase;
+  line-height:.9;
+  letter-spacing:-0.01em;
+}
+.label{
+  font-family:var(--font-body);
+  font-weight:500;
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+.container{max-width:1280px;margin-inline:auto;padding-inline:var(--pad-x);}
+
+/* skip link */
+.skip-link{
+  position:fixed;top:-60px;left:16px;z-index:100;
+  background:var(--red);color:#fff;padding:10px 18px;
+  font-weight:600;font-size:14px;transition:top .2s var(--ease-out);
+}
+.skip-link:focus-visible{top:12px;}
+
+/* layers */
+.scene-canvas{position:fixed;inset:0;z-index:0;pointer-events:none;filter:brightness(.65);}
+main, .site-footer{position:relative;z-index:1;}
+header.site-nav{z-index:50;}
+
+/* film grain, CSS only */
+.grain{
+  position:fixed;inset:0;z-index:80;pointer-events:none;opacity:.02;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* red scroll progress */
+.scroll-progress{
+  position:fixed;top:0;left:0;right:0;height:2px;z-index:70;
+  background:var(--red);transform:scaleX(0);transform-origin:left center;
+}
+
+/* technical drawing grid texture */
+.grid-bg{
+  background-image:
+    repeating-linear-gradient(0deg, var(--gridline) 0 1px, transparent 1px 72px),
+    repeating-linear-gradient(90deg, var(--gridline) 0 1px, transparent 1px 72px);
+}
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+.site-nav{
+  position:fixed;top:0;left:0;right:0;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px var(--pad-x);
+  background:transparent;border-bottom:1px solid transparent;
+  transition:background .3s var(--ease-out), border-color .3s var(--ease-out);
+}
+.site-nav.scrolled{background:rgba(14,14,14,.97);border-bottom-color:var(--hairline);}
+
+/* SWAP FOR REAL SVG LOGO */
+.logo-lockup{display:flex;align-items:center;gap:12px;min-height:44px;}
+.logo-tile{width:40px;height:40px;flex:0 0 auto;background:#000;display:grid;place-items:center;border:1px solid var(--hairline);}
+.logo-tile svg{width:28px;height:28px;display:block;}
+.logo-words{line-height:1.1;}
+.logo-words .l1{font-weight:800;font-size:15px;letter-spacing:.04em;}
+.logo-words .l2{font-weight:500;font-size:8.5px;letter-spacing:.3em;color:var(--muted);text-transform:uppercase;}
+
+.nav-right{display:flex;align-items:center;gap:6px;}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none;}
+.nav-links a{
+  display:inline-block;padding:12px 14px;font-size:14px;font-weight:600;
+  color:var(--ink);transition:color .15s var(--ease-out);
+}
+.nav-links a:hover{color:var(--red);}
+.btn-nav{
+  display:inline-block;margin-left:14px;padding:11px 22px;
+  border:1.5px solid var(--red);color:var(--ink);
+  font-size:14px;font-weight:600;cursor:pointer;
+  transition:background .2s var(--ease-out), color .2s var(--ease-out);
+}
+.btn-nav:hover{background:var(--red);color:#fff;}
+
+.menu-toggle{
+  display:none;width:44px;height:44px;border:0;background:transparent;color:var(--ink);
+  cursor:pointer;align-items:center;justify-content:center;
+}
+.menu-toggle:hover{color:var(--red);}
+
+/* mobile overlay menu */
+.menu-overlay{
+  position:fixed;inset:0;z-index:60;background:var(--bg);
+  display:flex;flex-direction:column;justify-content:center;padding:0 var(--pad-x);
+  visibility:hidden;opacity:0;transition:opacity .25s var(--ease-out), visibility 0s .25s;
+}
+.menu-overlay.open{visibility:visible;opacity:1;transition:opacity .25s var(--ease-out);}
+.menu-overlay .menu-close{
+  position:absolute;top:14px;right:var(--pad-x);width:44px;height:44px;
+  background:transparent;border:0;color:var(--ink);cursor:pointer;
+}
+.menu-overlay .menu-close:hover{color:var(--red);}
+.menu-overlay ul{list-style:none;}
+.menu-overlay a{
+  font-family:var(--font-display);font-size:2.5rem;text-transform:uppercase;
+  line-height:1.25;display:inline-block;padding:6px 0;
+  opacity:0;transform:translateY(18px);
+  transition:opacity .4s var(--ease-out), transform .4s var(--ease-out), color .15s;
+}
+.menu-overlay a:hover{color:var(--red);}
+.menu-overlay.open a{opacity:1;transform:translateY(0);}
+.menu-overlay.open li:nth-child(1) a{transition-delay:.06s,.06s,0s;}
+.menu-overlay.open li:nth-child(2) a{transition-delay:.12s,.12s,0s;}
+.menu-overlay.open li:nth-child(3) a{transition-delay:.18s,.18s,0s;}
+.menu-overlay.open li:nth-child(4) a{transition-delay:.24s,.24s,0s;}
+.menu-overlay.open li:nth-child(5) a{transition-delay:.3s,.3s,0s;}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  position:relative;min-height:100svh;
+  display:flex;align-items:center;
+  padding-top:90px;
+  overflow:hidden;
+}
+.hero-inner{position:relative;z-index:2;width:100%;}
+.hero-label{margin-bottom:26px;}
+.hero h1{font-size:clamp(3rem, 9vw, 9rem);}
+.hero h1 .line{display:block;}
+.hero h1 .red{color:var(--red);}
+.hero-sub{max-width:52ch;margin-top:30px;color:var(--ink);font-size:17px;}
+.hero-ctas{display:flex;align-items:center;flex-wrap:wrap;gap:22px;margin-top:38px;}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--red);color:#fff;border:1.5px solid var(--red);
+  padding:15px 30px;font-family:var(--font-body);font-size:15px;font-weight:700;
+  cursor:pointer;transition:background .2s var(--ease-out), border-color .2s var(--ease-out);
+}
+.btn:hover{background:var(--red-deep);border-color:var(--red-deep);}
+.btn-invert{background:#fff;color:#0E0E0E;border-color:#fff;}
+.btn-invert:hover{background:#E8E8E8;border-color:#E8E8E8;color:#0E0E0E;}
+.ghost-link{
+  display:inline-flex;align-items:center;gap:9px;min-height:44px;
+  font-size:15px;font-weight:600;color:var(--ink);position:relative;
+  transition:color .2s var(--ease-out);
+}
+.ghost-link svg{transition:transform .2s var(--ease-out);}
+.ghost-link:hover{color:var(--red);}
+.ghost-link:hover svg{transform:translateX(4px);}
+
+/* scroll cue */
+.scroll-cue{
+  position:absolute;left:50%;bottom:26px;width:1px;height:52px;
+  background:var(--hairline);overflow:hidden;z-index:2;
+}
+.scroll-cue::after{
+  content:"";position:absolute;left:0;top:-100%;width:1px;height:100%;
+  background:var(--ink);animation:cuePulse 3s var(--ease-out) infinite;
+}
+@keyframes cuePulse{
+  0%{top:-100%;} 40%{top:100%;} 100%{top:100%;}
+}
+
+/* CSS tower fallback (mobile, reduced motion, no JS) */
+.css-tower{
+  display:none;position:absolute;right:-14px;bottom:0;z-index:1;
+  width:min(210px, 44vw);height:min(430px, 52svh);opacity:.34;pointer-events:none;
+  background:
+    repeating-linear-gradient(0deg, var(--hairline) 0 2px, transparent 2px 12.5%),
+    repeating-linear-gradient(90deg, #262626 0 2px, rgba(16,20,24,.9) 2px 20%);
+  border:2px solid var(--hairline);border-bottom:0;border-right:0;
+  -webkit-mask-image:linear-gradient(180deg, transparent 0%, #000 32%);
+  mask-image:linear-gradient(180deg, transparent 0%, #000 32%);
+}
+.css-tower::before{
+  content:"";position:absolute;left:-9px;top:68%;bottom:0;width:6px;background:var(--red);
+}
+
+/* ============================================================
+   PROOF STRIP
+   ============================================================ */
+.proof{background:var(--bg);border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);}
+.proof-row{
+  display:grid;grid-template-columns:repeat(4,1fr);
+}
+.proof-item{
+  padding:52px 30px;border-left:1px solid var(--hairline);
+}
+.proof-item:first-child{border-left:0;}
+.proof-num{font-size:3rem;display:block;}
+.proof-item .label{margin-top:10px;display:block;}
+
+/* ============================================================
+   THREE MOVEMENTS
+   ============================================================ */
+.movements{position:relative;background:transparent;}
+.act{
+  position:relative;min-height:88svh;display:flex;align-items:center;
+  padding:70px 0;
+}
+.act-grid{
+  display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);
+  gap:48px;align-items:end;width:100%;
+}
+.act-left{position:relative;z-index:2;}
+.act-kicker{margin-bottom:20px;}
+.act h2{font-size:clamp(3.2rem, 8vw, 7.5rem);}
+.act h2 .red{color:var(--red);}
+.act-copy{max-width:44ch;margin-top:26px;color:var(--ink);font-size:17px;position:relative;z-index:2;}
+.act-right{position:relative;z-index:2;align-self:end;}
+.act-img{display:none;margin-top:34px;position:relative;}
+.act-img img{width:100%;height:340px;object-fit:cover;filter:saturate(.55) contrast(1.06);}
+.act-img::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(0deg, rgba(14,14,14,.85) 0%, rgba(14,14,14,.15) 55%, rgba(14,14,14,.35) 100%);
+}
+/* left scrim so type wins over the 3D scene */
+.movements::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(90deg, rgba(14,14,14,.88) 0%, rgba(14,14,14,.45) 45%, rgba(14,14,14,0) 70%);
+}
+/* pinned mode, applied by JS on desktop only */
+.movements.is-pinned{height:100svh;overflow:hidden;}
+.movements.is-pinned .act{
+  position:absolute;inset:0;min-height:0;height:100%;padding:0;
+}
+.movements.is-pinned .act:not(:first-of-type){opacity:0;visibility:hidden;}
+
+/* ============================================================
+   FLAGSHIP CASE STUDY
+   ============================================================ */
+.flagship{
+  position:relative;min-height:90vh;display:flex;align-items:flex-end;
+  overflow:hidden;background:var(--bg-2);
+}
+.flagship-media{position:absolute;inset:0;}
+.flagship-media img{
+  width:100%;height:118%;object-fit:cover;
+  filter:saturate(.5) contrast(1.08) brightness(.8);
+  will-change:transform;
+}
+.flagship-scrim{
+  position:absolute;inset:0;
+  background:linear-gradient(0deg, rgba(14,14,14,.96) 0%, rgba(14,14,14,.55) 45%, rgba(14,14,14,.35) 100%);
+}
+.flagship-content{position:relative;z-index:2;width:100%;padding-top:180px;padding-bottom:90px;}
+.flagship h2{font-size:clamp(2.4rem, 5vw, 4.6rem);max-width:14em;}
+.flagship .label{margin-bottom:20px;display:block;}
+.spec-list{list-style:none;margin-top:30px;border-top:1px solid var(--hairline);max-width:560px;}
+.spec-list li{
+  font-weight:500;font-size:15px;letter-spacing:.04em;
+  padding:13px 0;border-bottom:1px solid var(--hairline);color:var(--ink);
+}
+.spec-list li span{color:var(--muted);}
+.underline-link{
+  display:inline-flex;align-items:center;gap:9px;min-height:44px;margin-top:26px;
+  font-weight:700;font-size:15px;position:relative;color:var(--ink);
+}
+.underline-link::after{
+  content:"";position:absolute;left:0;bottom:6px;height:2px;width:100%;
+  background:var(--red);transform:scaleX(0);transform-origin:left center;
+  transition:transform .25s var(--ease-out);
+}
+.underline-link:hover::after{transform:scaleX(1);}
+
+/* ============================================================
+   CAPABILITIES INDEX
+   ============================================================ */
+.capabilities{background:var(--bg);padding:130px 0 110px;}
+.section-head{margin-bottom:56px;}
+.section-head .display{font-size:clamp(2.2rem, 4.5vw, 3.6rem);margin-top:14px;}
+.cap-list{list-style:none;border-top:1px solid var(--hairline);}
+.cap-row{
+  display:flex;align-items:center;gap:26px;
+  padding:26px 4px;border-bottom:1px solid var(--hairline);
+  transition:padding-left .15s var(--ease-out);
+}
+.cap-row:hover{padding-left:16px;}
+.cap-num{
+  font-weight:600;font-size:14px;color:var(--muted);width:34px;flex:0 0 auto;
+  transition:color .15s var(--ease-out);
+}
+.cap-row:hover .cap-num{color:var(--red);}
+.cap-name{font-weight:700;font-size:1.8rem;line-height:1.15;flex:1 1 auto;}
+.cap-row svg{flex:0 0 auto;color:var(--muted);transition:color .15s var(--ease-out), transform .15s var(--ease-out);}
+.cap-row:hover svg{color:var(--red);transform:translate(3px,-3px);}
+
+/* ============================================================
+   GRADE JOURNEY TIMELINE
+   ============================================================ */
+.journey{background:var(--bg-2);padding:120px 0 130px;border-top:1px solid var(--hairline);}
+.rail-wrap{overflow:hidden;margin-top:64px;}
+.rail-track{display:flex;gap:0;width:max-content;}
+.t-node{
+  width:300px;flex:0 0 auto;padding:0 34px 8px 22px;
+  border-left:1px solid var(--hairline);position:relative;
+  scroll-snap-align:start;
+}
+.t-node::before{
+  content:"";position:absolute;left:-5px;top:6px;width:9px;height:9px;
+  background:var(--bg-2);border:2px solid var(--muted);
+}
+.t-node.gc1::before{background:var(--red);border-color:var(--red);}
+.t-year{font-size:2.6rem;display:block;}
+.t-badge{
+  display:inline-block;margin-top:14px;padding:5px 12px;
+  border:1px solid var(--hairline);font-size:12px;font-weight:600;letter-spacing:.12em;
+  color:var(--ink-soft);text-transform:uppercase;
+}
+.t-node.gc1 .t-badge{border-color:var(--red);color:var(--red);}
+.t-line{margin-top:14px;font-size:15px;color:var(--ink-soft);max-width:24ch;}
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+.quotes{background:var(--bg);padding:130px 0 110px;}
+.quote-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;margin-top:60px;}
+.quote-item{border-top:2px solid var(--hairline);padding-top:34px;}
+.quote-item blockquote p{font-size:1.25rem;line-height:1.55;font-weight:400;}
+.quote-item figcaption{margin-top:24px;}
+.quote-item .who{font-weight:700;font-size:15px;display:block;}
+.quotes-note{margin-top:56px;color:var(--muted);font-size:14px;}
+
+/* ============================================================
+   CTA BAND
+   ============================================================ */
+.cta-band{background:var(--red);color:#fff;padding:110px 0 120px;}
+.cta-band h2{font-size:clamp(3rem, 8vw, 7.5rem);color:#fff;}
+.cta-band p{margin-top:22px;max-width:44ch;font-size:18px;color:#fff;}
+.cta-band .btn-invert{margin-top:40px;}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer{background:var(--bg);border-top:1px solid var(--hairline);}
+.footer-grid{
+  display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:56px;
+  padding-top:80px;padding-bottom:64px;
+}
+.footer-col .label{display:block;margin-bottom:18px;}
+.footer-col p, .footer-col address{font-style:normal;color:var(--ink-soft);font-size:15px;line-height:1.7;}
+.footer-col ul{list-style:none;}
+.footer-col ul a{
+  display:inline-block;padding:6px 0;font-size:15px;color:var(--ink-soft);
+  transition:color .15s var(--ease-out);
+}
+.footer-col ul a:hover{color:var(--red);}
+.footer-col address a{color:var(--ink-soft);transition:color .15s var(--ease-out);}
+.footer-col address a:hover{color:var(--red);}
+.footer-bottom{
+  border-top:1px solid var(--hairline);
+  padding-top:26px;padding-bottom:30px;
+  display:flex;flex-wrap:wrap;gap:10px 34px;
+  font-size:13px;color:var(--muted);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width:1023.98px){
+  .cap-name{font-size:1.4rem;}
+  .quote-grid{gap:44px;}
+}
+@media (max-width:767.98px){
+  .nav-links, .btn-nav{display:none;}
+  .menu-toggle{display:inline-flex;}
+  .scene-canvas{display:none;}
+  .css-tower{display:block;}
+  .act-img{display:block;}
+  .act{min-height:0;padding:56px 0;}
+  .act-grid{grid-template-columns:1fr;gap:0;}
+  .movements::before{display:none;}
+  .proof-row{grid-template-columns:1fr 1fr;}
+  .proof-item{padding:34px 22px;border-top:1px solid var(--hairline);}
+  .proof-item:nth-child(-n+2){border-top:0;}
+  .proof-item:nth-child(3){border-left:0;}
+  .quote-grid{grid-template-columns:1fr;gap:50px;}
+  .footer-grid{grid-template-columns:1fr;gap:40px;padding-top:60px;}
+  .rail-wrap{overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:14px;}
+  .t-node{width:255px;}
+  .flagship-content{padding-top:220px;}
+  .hero{padding-top:110px;padding-bottom:80px;}
+}
+
+/* no-JS fallbacks: show static act imagery and CSS tower */
+.no-js .act-img{display:block;}
+.no-js .css-tower{display:block;}
+.no-js .scene-canvas{display:none;}
+
+/* ============================================================
+   REDUCED MOTION: complete static experience
+   ============================================================ */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation:none !important;transition:none !important;}
+  .scene-canvas{display:none;}
+  .css-tower{display:block;}
+  .act-img{display:block;}
+  .scroll-cue{display:none;}
+}
+</style>
+</head>
+
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+<canvas class="scene-canvas" id="scene" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<header class="site-nav" id="siteNav">
+  <!-- SWAP FOR REAL SVG LOGO -->
+  <a class="logo-lockup" href="#main" aria-label="Advanced General Contractors, home">
+    <span class="logo-tile" aria-hidden="true">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="24,8 8,40 24,40" fill="#E12500"/>
+        <polygon points="24,8 40,40 24,40" fill="#F5F5F5"/>
+      </svg>
+    </span>
+    <span class="logo-words">
+      <span class="l1">ADVANCED</span><br>
+      <span class="l2">General Contractor</span>
+    </span>
+  </a>
+  <nav class="nav-right" aria-label="Primary">
+    <ul class="nav-links">
+      <li><a href="#flagship">Projects</a></li>
+      <li><a href="#capabilities">Services</a></li>
+      <li><a href="#journey">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="btn-nav" href="#contact">Start your project</a>
+    <button class="menu-toggle" id="menuOpen" aria-expanded="false" aria-controls="menuOverlay" aria-label="Open menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </nav>
+</header>
+
+<!-- mobile full-screen menu -->
+<div class="menu-overlay" id="menuOverlay" role="dialog" aria-modal="true" aria-label="Menu">
+  <button class="menu-close" id="menuClose" aria-label="Close menu">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square"><path d="M5 5l14 14M19 5L5 19"/></svg>
+  </button>
+  <nav aria-label="Mobile">
+    <ul>
+      <li><a href="#flagship">Projects</a></li>
+      <li><a href="#capabilities">Services</a></li>
+      <li><a href="#journey">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact">Start your project</a></li>
+    </ul>
+  </nav>
+</div>
+
+<main id="main">
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="hero" id="hero" aria-label="Introduction">
+    <div class="css-tower" aria-hidden="true"></div>
+    <div class="container hero-inner">
+      <p class="label hero-label" data-hero>Grade One General Contractor. Addis Ababa, Ethiopia.</p>
+      <h1 class="display">
+        <span class="line" data-hero-line>Built to a</span>
+        <span class="line red" data-hero-line>New</span>
+        <span class="line" data-hero-line>Standard.</span>
+      </h1>
+      <p class="hero-sub" data-hero>Advanced General Contractors (AGC), formerly 7Set General Trading. We plan, build, and deliver landmark projects across Ethiopia. All types of construction. One standard.</p>
+      <div class="hero-ctas" data-hero>
+        <a class="btn" href="#contact">Start your project</a>
+        <a class="ghost-link" href="#flagship">See the Megenagna project
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="scroll-cue" aria-hidden="true"></div>
+  </section>
+
+  <!-- ============================================================
+       PROOF STRIP
+       ============================================================ -->
+  <section class="proof grid-bg" aria-label="Company proof">
+    <div class="container">
+      <div class="proof-row">
+        <div class="proof-item" data-proof>
+          <span class="proof-num display">GC-1</span>
+          <span class="label">Top-tier license, since 2018</span>
+        </div>
+        <div class="proof-item" data-proof>
+          <span class="proof-num display" data-count="2.12" data-decimals="2" data-suffix="B+">2.12B+</span>
+          <span class="label">ETB annual turnover</span>
+        </div>
+        <div class="proof-item" data-proof>
+          <span class="proof-num display" data-count="1.5" data-decimals="1" data-suffix="B">1.5B</span>
+          <span class="label">ETB flagship project value</span>
+        </div>
+        <div class="proof-item" data-proof>
+          <span class="proof-num display" data-count="4" data-decimals="0" data-suffix="">4</span>
+          <span class="label">Months to deliver it</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       THE THREE MOVEMENTS (pinned scroll centerpiece on desktop)
+       ============================================================ -->
+  <section class="movements" id="movements" aria-label="How we work">
+
+    <article class="act" data-act="1">
+      <div class="container act-grid">
+        <div class="act-left">
+          <p class="label act-kicker">Movement I</p>
+          <h2 class="display">We <span class="red">plan.</span></h2>
+          <p class="act-copy">Surveys, engineering, and scheduling before a single bar of steel moves. Many said Megenagna would take years. We planned it in months.</p>
+        </div>
+        <div class="act-right">
+          <div class="act-img">
+            <!-- REPLACE WITH REAL AGC SITE PHOTO -->
+            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=70&auto=format&fit=crop" alt="Engineer drafting a structural drawing at a site desk" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="act" data-act="2">
+      <div class="container act-grid">
+        <div class="act-left">
+          <p class="label act-kicker">Movement II</p>
+          <h2 class="display">We <span class="red">build.</span></h2>
+          <p class="act-copy">Certified engineers. Owned machinery. A safety-first site culture across every floor.</p>
+        </div>
+        <div class="act-right">
+          <div class="act-img">
+            <!-- REPLACE WITH REAL AGC SITE PHOTO -->
+            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&q=70&auto=format&fit=crop" alt="Construction crew standing over a reinforced concrete slab in progress" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="act" data-act="3">
+      <div class="container act-grid">
+        <div class="act-left">
+          <p class="label act-kicker">Movement III</p>
+          <h2 class="display">We <span class="red">deliver.</span></h2>
+          <p class="act-copy">Four months. Zero excuses. The Ministry of Transport building stands at Megenagna as proof.</p>
+        </div>
+        <div class="act-right">
+          <div class="act-img">
+            <!-- REPLACE WITH REAL AGC SITE PHOTO -->
+            <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&q=70&auto=format&fit=crop" alt="Completed high-rise towers lit at night" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- ============================================================
+       FLAGSHIP CASE STUDY
+       ============================================================ -->
+  <section class="flagship" id="flagship" aria-label="Flagship project">
+    <div class="flagship-media" aria-hidden="false">
+      <!-- REPLACE WITH REAL AGC SITE PHOTO -->
+      <img id="flagshipImg" src="https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?w=2000&q=72&auto=format&fit=crop" alt="Low angle view of glass curtain wall towers rising into fog" loading="lazy">
+    </div>
+    <div class="flagship-scrim" aria-hidden="true"></div>
+    <div class="container flagship-content">
+      <p class="label" data-reveal>Flagship. Megenagna, Addis Ababa.</p>
+      <h2 class="display" data-reveal>The Ministry of Transport building. Delivered in four months.</h2>
+      <ul class="spec-list" data-reveal>
+        <li>Curtain walls <span>/</span> Aluminum paneling <span>/</span> Sunbreakers</li>
+        <li>ETB 1.5 billion. Client: Addis Ababa City Administration.</li>
+      </ul>
+      <a class="underline-link" href="#contact" data-reveal>Explore the project
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CAPABILITIES INDEX
+       ============================================================ -->
+  <section class="capabilities" id="capabilities" aria-label="Capabilities">
+    <div class="container">
+      <div class="section-head">
+        <p class="label" data-reveal>Capabilities</p>
+        <h2 class="display" data-reveal>All types of construction. One standard.</h2>
+      </div>
+      <ul class="cap-list">
+        <li class="cap-row" data-cap><span class="cap-num">01</span><span class="cap-name">Structural Construction</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></li>
+        <li class="cap-row" data-cap><span class="cap-num">02</span><span class="cap-name">Roads and Bridges</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></li>
+        <li class="cap-row" data-cap><span class="cap-num">03</span><span class="cap-name">Earthworks and Foundations</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></li>
+        <li class="cap-row" data-cap><span class="cap-num">04</span><span class="cap-name">Industrial and Warehouse</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></li>
+        <li class="cap-row" data-cap><span class="cap-num">05</span><span class="cap-name">Aluminum and Glass</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></li>
+        <li class="cap-row" data-cap><span class="cap-num">06</span><span class="cap-name">Curtain Walls and Facades</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></li>
+        <li class="cap-row" data-cap><span class="cap-num">07</span><span class="cap-name">Interiors and Fit-Out</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></li>
+        <li class="cap-row" data-cap><span class="cap-num">08</span><span class="cap-name">Project Management</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       GRADE JOURNEY
+       ============================================================ -->
+  <section class="journey grid-bg" id="journey" aria-label="License history">
+    <div class="container">
+      <div class="section-head">
+        <p class="label" data-reveal>The climb to Grade One</p>
+        <h2 class="display" data-reveal>Five years. Four license tiers.</h2>
+      </div>
+    </div>
+    <div class="container">
+      <div class="rail-wrap" id="railWrap">
+        <div class="rail-track" id="railTrack">
+          <div class="t-node">
+            <span class="t-year display">2013</span>
+            <span class="t-badge">GC-4</span>
+            <p class="t-line">Founded, licensed GC-4.</p>
+          </div>
+          <div class="t-node">
+            <span class="t-year display">2015</span>
+            <span class="t-badge">GC-3</span>
+            <p class="t-line">Upgraded to GC-3.</p>
+          </div>
+          <div class="t-node">
+            <span class="t-year display">2017</span>
+            <span class="t-badge">GC-2</span>
+            <p class="t-line">Upgraded to GC-2.</p>
+          </div>
+          <div class="t-node gc1">
+            <span class="t-year display">2018</span>
+            <span class="t-badge">GC-1</span>
+            <p class="t-line">Grade One. The top license tier in Ethiopia.</p>
+          </div>
+          <div class="t-node">
+            <span class="t-year display">Today</span>
+            <span class="t-badge">Portfolio</span>
+            <p class="t-line">A multi-billion birr portfolio.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       WORD OF CLIENTS
+       ============================================================ -->
+  <section class="quotes" aria-label="Client references">
+    <div class="container">
+      <div class="section-head">
+        <p class="label" data-reveal>Word of clients</p>
+        <h2 class="display" data-reveal>On record.</h2>
+      </div>
+      <div class="quote-grid">
+        <figure class="quote-item" data-quote>
+          <blockquote>
+            <p>"Seven S ET Trading PLC has consistently demonstrated professionalism, technical expertise, and a strong commitment to quality, safety, and timely project delivery."</p>
+          </blockquote>
+          <figcaption>
+            <span class="who">Mrs. Demitu Feyisa</span>
+            <span class="label">General Manager, Intel Motion</span>
+          </figcaption>
+        </figure>
+        <figure class="quote-item" data-quote>
+          <blockquote>
+            <p>"The company demonstrated technical competence, adherence to safety and quality standards, and a responsible approach to project execution."</p>
+          </blockquote>
+          <figcaption>
+            <span class="who">Design and Construction Works Bureau</span>
+            <span class="label">Addis Ababa City Administration</span>
+          </figcaption>
+        </figure>
+      </div>
+      <p class="quotes-note">Seven client reference letters on file, available on request.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FINAL CTA BAND
+       ============================================================ -->
+  <section class="cta-band" id="contact" aria-label="Start a project">
+    <div class="container">
+      <h2 class="display">Let's build it.</h2>
+      <p>Tell us what you are planning. We will tell you how fast it can stand.</p>
+      <a class="btn btn-invert" href="mailto:sevensettradingplc@gmail.com">Talk to AGC</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <!-- SWAP FOR REAL SVG LOGO -->
+      <a class="logo-lockup" href="#main" aria-label="Advanced General Contractors, back to top" style="margin-bottom:20px;">
+        <span class="logo-tile" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="24,8 8,40 24,40" fill="#E12500"/>
+            <polygon points="24,8 40,40 24,40" fill="#F5F5F5"/>
+          </svg>
+        </span>
+        <span class="logo-words">
+          <span class="l1">ADVANCED</span><br>
+          <span class="l2">General Contractor</span>
+        </span>
+      </a>
+      <p>Advanced General Contractors (AGC). Formerly 7Set General Trading. Grade One General Contractor, SEVEN S ET TRADING PLC.</p>
+    </div>
+    <div class="footer-col">
+      <span class="label">Contact</span>
+      <address>
+        Bole Matemiya, City View Addis Building, 2nd floor, Addis Ababa<br>
+        <a href="tel:+251974091900">+251 97 409 1900</a><br>
+        <a href="mailto:sevensettradingplc@gmail.com">sevensettradingplc@gmail.com</a>
+      </address>
+    </div>
+    <div class="footer-col">
+      <span class="label">Index</span>
+      <ul>
+        <li><a href="#flagship">Projects</a></li>
+        <li><a href="#capabilities">Services</a></li>
+        <li><a href="#journey">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>Copyright 2026 Advanced General Contractors (AGC)</span>
+    <span>GC-1 Grade One General Contractor license, held since 2018</span>
+    <span>TIN 0069209303</span>
+  </div>
+</footer>
+
+<!-- ============================================================
+     MOTION: GSAP core + ScrollTrigger
+     ============================================================ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- nav state + scroll progress (plain JS, cheap) ---------- */
+  var nav = document.getElementById('siteNav');
+  var bar = document.querySelector('.scroll-progress');
+  var ticking = false;
+  function onScroll(){
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function(){
+      var y = window.scrollY || 0;
+      nav.classList.toggle('scrolled', y > 80);
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(y / max, 1) : 0) + ')';
+      ticking = false;
+    });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* ---------- mobile menu ---------- */
+  var overlay = document.getElementById('menuOverlay');
+  var openBtn = document.getElementById('menuOpen');
+  var closeBtn = document.getElementById('menuClose');
+  function setMenu(open){
+    overlay.classList.toggle('open', open);
+    openBtn.setAttribute('aria-expanded', String(open));
+    document.body.style.overflow = open ? 'hidden' : '';
+    if (open) closeBtn.focus(); else openBtn.focus();
+  }
+  openBtn.addEventListener('click', function(){ setMenu(true); });
+  closeBtn.addEventListener('click', function(){ setMenu(false); });
+  overlay.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ setMenu(false); });
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && overlay.classList.contains('open')) setMenu(false);
+  });
+
+  /* ---------- global 3D progress channel ---------- */
+  window.__AGC = { P: 0 };
+
+  if (!window.gsap || !window.ScrollTrigger) return;
+  gsap.registerPlugin(ScrollTrigger);
+
+  var mm = gsap.matchMedia();
+
+  /* ---------- motion for everyone who allows it ---------- */
+  mm.add('(prefers-reduced-motion: no-preference)', function(){
+
+    /* hero entrance: whole lines only, no character confetti */
+    gsap.from('[data-hero-line]', {
+      y: 40, opacity: 0, duration: .7, ease: 'power3.out', stagger: .09, delay: .1
+    });
+    gsap.from('[data-hero]', {
+      y: 24, opacity: 0, duration: .6, ease: 'power2.out', stagger: .08, delay: .45
+    });
+
+    /* discrete reveals: section headers, flagship content, quotes */
+    gsap.utils.toArray('[data-reveal]').forEach(function(el){
+      gsap.from(el, {
+        y: 32, opacity: 0, duration: .6, ease: 'power2.out',
+        scrollTrigger: { trigger: el, start: 'top 80%', once: true }
+      });
+    });
+    gsap.from('[data-quote]', {
+      y: 32, opacity: 0, duration: .6, ease: 'power2.out', stagger: .12,
+      scrollTrigger: { trigger: '.quote-grid', start: 'top 80%', once: true }
+    });
+
+    /* capabilities rows, 40ms stagger */
+    gsap.from('[data-cap]', {
+      y: 28, opacity: 0, duration: .55, ease: 'power2.out', stagger: .04,
+      scrollTrigger: { trigger: '.cap-list', start: 'top 82%', once: true }
+    });
+
+    /* proof strip: reveal + count up once */
+    ScrollTrigger.create({
+      trigger: '.proof-row', start: 'top 82%', once: true,
+      onEnter: function(){
+        gsap.from('[data-proof]', { y: 28, opacity: 0, duration: .6, ease: 'power2.out', stagger: .07 });
+        document.querySelectorAll('[data-count]').forEach(function(el){
+          var end = parseFloat(el.getAttribute('data-count'));
+          var dec = parseInt(el.getAttribute('data-decimals'), 10) || 0;
+          var suf = el.getAttribute('data-suffix') || '';
+          var obj = { v: 0 };
+          gsap.to(obj, {
+            v: end, duration: 1.2, ease: 'power2.out',
+            onUpdate: function(){ el.textContent = obj.v.toFixed(dec) + suf; }
+          });
+        });
+      }
+    });
+
+    return function(){};
+  });
+
+  /* ---------- desktop-only choreography ---------- */
+  mm.add('(min-width: 768px) and (prefers-reduced-motion: no-preference)', function(){
+
+    var movements = document.getElementById('movements');
+    var acts = gsap.utils.toArray('.act');
+    movements.classList.add('is-pinned');
+
+    /* pinned three movements, scrubbed, 300vh */
+    var tl = gsap.timeline({
+      defaults: { ease: 'none' },
+      scrollTrigger: {
+        trigger: movements, start: 'top top', end: '+=300%',
+        pin: true, scrub: 0.4, anticipatePin: 1
+      }
+    });
+    gsap.set(acts[1], { autoAlpha: 0 });
+    gsap.set(acts[2], { autoAlpha: 0 });
+    tl.to({}, { duration: 0.9 })
+      .to(acts[0], { autoAlpha: 0, y: -44, duration: 0.25 }, 0.9)
+      .fromTo(acts[1], { autoAlpha: 0, y: 44 }, { autoAlpha: 1, y: 0, duration: 0.25 }, 1.05)
+      .to({}, { duration: 0.6 }, 1.3)
+      .to(acts[1], { autoAlpha: 0, y: -44, duration: 0.25 }, 1.9)
+      .fromTo(acts[2], { autoAlpha: 0, y: 44 }, { autoAlpha: 1, y: 0, duration: 0.25 }, 2.05)
+      .to({}, { duration: 0.7 }, 2.3);
+
+    /* single global progress P for the 3D: page top through the pin end */
+    var pinST = tl.scrollTrigger;
+    var pST = ScrollTrigger.create({
+      start: 0,
+      end: function(){ return pinST.end; },
+      onUpdate: function(self){ window.__AGC.P = self.progress; }
+    });
+
+    /* flagship parallax, about 0.85x */
+    var fimg = document.getElementById('flagshipImg');
+    var par = gsap.fromTo(fimg, { yPercent: -9 }, {
+      yPercent: 3, ease: 'none',
+      scrollTrigger: { trigger: '.flagship', start: 'top bottom', end: 'bottom top', scrub: true }
+    });
+
+    /* journey rail scrub */
+    var wrap = document.getElementById('railWrap');
+    var track = document.getElementById('railTrack');
+    var railTween = gsap.to(track, {
+      x: function(){ return Math.min(0, wrap.clientWidth - track.scrollWidth); },
+      ease: 'none',
+      scrollTrigger: { trigger: '.journey', start: 'top 75%', end: 'bottom 25%', scrub: true, invalidateOnRefresh: true }
+    });
+
+    return function(){
+      movements.classList.remove('is-pinned');
+      gsap.set(acts, { clearProps: 'all' });
+      pST.kill();
+    };
+  });
+
+})();
+</script>
+
+<!-- ============================================================
+     3D CENTERPIECE: procedural tower, Three.js
+     ============================================================ -->
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+</script>
+<script type="module">
+"use strict";
+
+const wideMQ = window.matchMedia('(min-width: 768px)');
+const motionMQ = window.matchMedia('(prefers-reduced-motion: no-preference)');
+let scene3d = null;
+
+async function init(){
+  if (scene3d) return;
+  const canvas = document.getElementById('scene');
+  let THREE;
+  try { THREE = await import('three'); } catch (e) { canvas.style.display = 'none'; return; }
+
+  let renderer;
+  try {
+    renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false, powerPreference: 'low-power' });
+  } catch (e) { canvas.style.display = 'none'; return; }
+
+  const state = {
+    raf: 0, visible: true, dispP: 0, lastApplied: -1,
+    px: 0, py: 0, cpx: 0, cpy: 0,
+    disposed: false
+  };
+
+  renderer.setClearColor(0x0E0E0E, 1);
+  const setSize = () => {
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.setSize(window.innerWidth, window.innerHeight, false);
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+  };
+
+  const scene = new THREE.Scene();
+  scene.fog = new THREE.Fog(0x0E0E0E, 14, 34);
+  const camera = new THREE.PerspectiveCamera(34, 1, 0.1, 100);
+  camera.position.set(0, 1.0, 16.2);
+
+  /* tower dimensions: 5 bays wide, 2 deep, 8 floors, slender high-rise massing */
+  const BAY = 0.92, FLOOR = 1.06, BAYS_X = 5, BAYS_Z = 2, FLOORS = 8;
+  const W = BAY * BAYS_X, D = BAY * BAYS_Z, H = FLOOR * FLOORS;
+  const baseY = -3.9;
+
+  const tower = new THREE.Group();
+  tower.position.set(4.3, 0, 0);
+  scene.add(tower);
+
+  /* lighting: one cool key, one faint red rim from below */
+  scene.add(new THREE.AmbientLight(0x3C4147, 1.15));
+  const key = new THREE.DirectionalLight(0xBFD3E6, 3.4);
+  key.position.set(-6, 9, 7);
+  scene.add(key);
+  const rim = new THREE.PointLight(0xE12500, 26, 24, 2);
+  rim.position.set(4.3, baseY - 2.2, 3.4);
+  scene.add(rim);
+  const sweep = new THREE.PointLight(0xFFE2D8, 0, 16, 2);
+  sweep.position.set(4.3 - W / 2, baseY, 3.2);
+  scene.add(sweep);
+
+  /* ---- wireframe lattice: line segments sorted bottom-up for draw-in ---- */
+  const segs = [];
+  const colX = [], colZ = [];
+  for (let i = 0; i <= BAYS_X; i++) colX.push(-W/2 + i*BAY);
+  for (let i = 0; i <= BAYS_Z; i++) colZ.push(-D/2 + i*BAY);
+  /* perimeter columns, split per floor so they draw upward */
+  const colPts = [];
+  colX.forEach(x => { colPts.push([x, -D/2], [x, D/2]); });
+  colZ.slice(1, -1).forEach(z => { colPts.push([-W/2, z], [W/2, z]); });
+  colPts.forEach(([x, z]) => {
+    for (let f = 0; f < FLOORS; f++) {
+      const y0 = baseY + f*FLOOR;
+      segs.push({ a: [x, y0, z], b: [x, y0 + FLOOR, z], key: y0 + FLOOR/2 });
+    }
+  });
+  /* perimeter ring beams at each level */
+  for (let f = 0; f <= FLOORS; f++) {
+    const y = baseY + f*FLOOR;
+    segs.push({ a: [-W/2, y, -D/2], b: [W/2, y, -D/2], key: y + 0.01 });
+    segs.push({ a: [-W/2, y,  D/2], b: [W/2, y,  D/2], key: y + 0.01 });
+    segs.push({ a: [-W/2, y, -D/2], b: [-W/2, y, D/2], key: y + 0.01 });
+    segs.push({ a: [ W/2, y, -D/2], b: [ W/2, y, D/2], key: y + 0.01 });
+  }
+  segs.sort((s1, s2) => s1.key - s2.key);
+  const linePos = new Float32Array(segs.length * 6);
+  segs.forEach((s, i) => { linePos.set([...s.a, ...s.b], i * 6); });
+  const lineGeo = new THREE.BufferGeometry();
+  lineGeo.setAttribute('position', new THREE.BufferAttribute(linePos, 3));
+  lineGeo.setDrawRange(0, 0);
+  const lineMat = new THREE.LineBasicMaterial({ color: 0x5C5C5C, transparent: true, opacity: 1 });
+  const wire = new THREE.LineSegments(lineGeo, lineMat);
+  tower.add(wire);
+
+  /* ---- solid beams: one instanced mesh ---- */
+  const beamMat = new THREE.MeshStandardMaterial({
+    color: 0x2A2A2A, metalness: 0.6, roughness: 0.45, transparent: true, opacity: 0
+  });
+  const beamDefs = [];
+  colPts.forEach(([x, z]) => beamDefs.push({ p: [x, baseY + H/2, z], s: [0.07, H, 0.07] }));
+  for (let f = 0; f <= FLOORS; f++) {
+    const y = baseY + f*FLOOR;
+    beamDefs.push({ p: [0, y, -D/2], s: [W + 0.07, 0.07, 0.07] });
+    beamDefs.push({ p: [0, y,  D/2], s: [W + 0.07, 0.07, 0.07] });
+    beamDefs.push({ p: [-W/2, y, 0], s: [0.07, 0.07, D] });
+    beamDefs.push({ p: [ W/2, y, 0], s: [0.07, 0.07, D] });
+  }
+  const beams = new THREE.InstancedMesh(new THREE.BoxGeometry(1, 1, 1), beamMat, beamDefs.length);
+  const m4 = new THREE.Matrix4();
+  beamDefs.forEach((b, i) => {
+    m4.compose(
+      new THREE.Vector3(...b.p),
+      new THREE.Quaternion(),
+      new THREE.Vector3(...b.s)
+    );
+    beams.setMatrixAt(i, m4);
+  });
+  beams.visible = false;
+  tower.add(beams);
+
+  /* ---- curtain wall panels: front face + left face, attach bay by bay ---- */
+  const panelGeo = new THREE.PlaneGeometry(BAY - 0.08, FLOOR - 0.08);
+  const panels = [];
+  let k = 0;
+  for (let f = 0; f < FLOORS; f++) {
+    const y = baseY + FLOOR/2 + f*FLOOR;
+    for (let i = 0; i < BAYS_X; i++) {                    /* front face */
+      const mat = new THREE.MeshStandardMaterial({
+        color: 0x101418, metalness: 0.8, roughness: 0.22,
+        emissive: 0x13222B, emissiveIntensity: 0.85, transparent: true, opacity: 0
+      });
+      const p = new THREE.Mesh(panelGeo, mat);
+      p.position.set(-W/2 + BAY/2 + i*BAY, y, D/2 + 0.02);
+      panels.push({ mesh: p, base: p.position.clone(), dir: new THREE.Vector3(0, 0, 1), k: k++ });
+      p.visible = false; tower.add(p);
+    }
+    for (let i = 0; i < BAYS_Z; i++) {                    /* left face, toward camera side */
+      const mat = new THREE.MeshStandardMaterial({
+        color: 0x101418, metalness: 0.8, roughness: 0.22,
+        emissive: 0x13222B, emissiveIntensity: 0.85, transparent: true, opacity: 0
+      });
+      const p = new THREE.Mesh(panelGeo, mat);
+      p.position.set(-W/2 - 0.02, y, -D/2 + BAY/2 + i*BAY);
+      p.rotation.y = -Math.PI / 2;
+      panels.push({ mesh: p, base: p.position.clone(), dir: new THREE.Vector3(-1, 0, 0), k: k++ });
+      p.visible = false; tower.add(p);
+    }
+  }
+  const PANEL_COUNT = panels.length;
+
+  /* ---- red fin, grows from the base on the tower's left edge ---- */
+  const finGeo = new THREE.BoxGeometry(0.14, 1, 0.62);
+  finGeo.translate(0, 0.5, 0);
+  const finMat = new THREE.MeshStandardMaterial({
+    color: 0xE12500, metalness: 0.3, roughness: 0.5,
+    emissive: 0xE12500, emissiveIntensity: 0.25, transparent: true, opacity: 0
+  });
+  const fin = new THREE.Mesh(finGeo, finMat);
+  fin.position.set(-W/2 - 0.16, baseY, D/2 - 0.5);
+  fin.visible = false;
+  tower.add(fin);
+
+  const clamp01 = v => Math.max(0, Math.min(1, v));
+  const outBack = t => { const c1 = 1.70158, c3 = c1 + 1; return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2); };
+
+  function applyP(p){
+    /* phase 1: wireframe draws in, bottom to top; a base frame is always present */
+    const wf = Math.max(clamp01(p / 0.3), 0.16);
+    lineGeo.setDrawRange(0, Math.floor(segs.length * wf) * 2);
+    lineMat.opacity = 1 - 0.8 * clamp01((p - 0.4) / 0.3);
+    wire.visible = lineMat.opacity > 0.05 && wf > 0;
+
+    /* phase 2a: beams solidify */
+    const bo = clamp01((p - 0.3) / 0.16);
+    beamMat.opacity = bo;
+    beams.visible = bo > 0.01;
+
+    /* phase 2b: panels fly in and attach with overshoot */
+    for (let i = 0; i < PANEL_COUNT; i++) {
+      const pl = panels[i];
+      const start = 0.34 + (pl.k / PANEL_COUNT) * 0.34;
+      const t = clamp01((p - start) / 0.07);
+      if (t <= 0) { pl.mesh.visible = false; continue; }
+      pl.mesh.visible = true;
+      const e = outBack(t);
+      pl.mesh.position.copy(pl.base).addScaledVector(pl.dir, (1 - e) * 2.4);
+      pl.mesh.position.y = pl.base.y + (1 - e) * 0.5;
+      pl.mesh.material.opacity = t;
+    }
+
+    /* phase 3: red fin + one light sweep */
+    const ft = clamp01((p - 0.7) / 0.12);
+    fin.visible = ft > 0;
+    fin.scale.y = Math.max(ft, 0.001) * H * 1.03;
+    finMat.opacity = ft;
+    const st = clamp01((p - 0.8) / 0.2);
+    sweep.intensity = Math.sin(st * Math.PI) * 46;
+    sweep.position.y = baseY - 0.5 + st * (H + 2);
+  }
+
+  /* pointer parallax, lerped */
+  const onPointer = (e) => {
+    state.px = (e.clientX / window.innerWidth - 0.5);
+    state.py = (e.clientY / window.innerHeight - 0.5);
+  };
+  window.addEventListener('pointermove', onPointer, { passive: true });
+
+  /* render only while the hero or the movements section is on screen */
+  const io = new IntersectionObserver((entries) => {
+    state.visible = entries.some(en => en.isIntersecting) ||
+      !!document.querySelector('#hero, #movements') && isAnyVisible();
+  });
+  function isAnyVisible(){
+    return ['hero', 'movements'].some(id => {
+      const el = document.getElementById(id);
+      if (!el) return false;
+      const r = el.getBoundingClientRect();
+      return r.bottom > 0 && r.top < window.innerHeight;
+    });
+  }
+  io.observe(document.getElementById('hero'));
+  io.observe(document.getElementById('movements'));
+
+  const look = new THREE.Vector3(2.4, 0.35, 0);
+  function tick(t){
+    state.raf = requestAnimationFrame(tick);
+    if (state.disposed || document.hidden) return;
+    if (!isAnyVisible()) return;                    /* pause loop off-screen */
+
+    const target = (window.__AGC && window.__AGC.P) || 0;
+    state.dispP += (target - state.dispP) * 0.14;
+    if (Math.abs(state.dispP - state.lastApplied) > 0.0004) {
+      applyP(state.dispP);
+      state.lastApplied = state.dispP;
+    }
+
+    /* idle orbit drift, 4 degrees amplitude, plus lerped mouse parallax */
+    state.cpx += (state.px - state.cpx) * 0.05;
+    state.cpy += (state.py - state.cpy) * 0.05;
+    const a = Math.sin(t * 0.00022) * (4 * Math.PI / 180);
+    camera.position.x = Math.sin(a) * 16.2 * 0.35 + state.cpx * 0.9;
+    camera.position.y = 1.0 - state.cpy * 0.5;
+    camera.lookAt(look);
+    renderer.render(scene, camera);
+  }
+
+  window.addEventListener('resize', setSize);
+  setSize();
+  applyP(0);
+  state.raf = requestAnimationFrame(tick);
+
+  scene3d = {
+    dispose(){
+      state.disposed = true;
+      cancelAnimationFrame(state.raf);
+      window.removeEventListener('pointermove', onPointer);
+      window.removeEventListener('resize', setSize);
+      io.disconnect();
+      scene.traverse(o => {
+        if (o.geometry) o.geometry.dispose();
+        if (o.material) { Array.isArray(o.material) ? o.material.forEach(m => m.dispose()) : o.material.dispose(); }
+      });
+      renderer.dispose();
+      canvas.remove();
+      scene3d = null;
+    }
+  };
+}
+
+function evaluate(){
+  if (wideMQ.matches && motionMQ.matches) { init(); }
+  else if (scene3d) { scene3d.dispose(); }
+}
+wideMQ.addEventListener('change', evaluate);
+motionMQ.addEventListener('change', evaluate);
+evaluate();
+</script>
+
+</body>
+</html>

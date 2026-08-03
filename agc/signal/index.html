@@ -1,0 +1,747 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Advanced General Contractors (AGC) | Grade One Construction, Ethiopia</title>
+<meta name="description" content="Advanced General Contractors (AGC), formerly 7Set General Trading. Grade One Ethiopian contractor. 2.12B+ ETB turnover. Speed. Scale. Perfection.">
+<meta property="og:title" content="Advanced General Contractors (AGC) | Grade One Construction, Ethiopia">
+<meta property="og:description" content="Grade One contractor for all types of construction. The Ministry of Transport building, ETB 1.5 billion, delivered in four months.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23111111'/%3E%3Cpath d='M14 50 L32 14 L32 50 Z' fill='%23E12500'/%3E%3Cpath d='M32 14 L50 50 L32 50 Z' fill='%23FAFAF8'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   AGC OPTION 3: SIGNAL. Red poster modernism.
+   Palette: white #FAFAF8, red #E12500, black #111111, ink #111111,
+   muted #6A6A6A (on white only). One family: Archivo.
+   The diagonal: 68 degrees, everywhere. tan(68) = 2.475.
+   ============================================================ */
+:root{
+  --white:#FAFAF8;
+  --red:#E12500;
+  --black:#111111;
+  --muted:#6A6A6A;
+  --rise:6vw;                       /* diagonal step rise */
+  --run:2.42vw;                     /* rise / tan(68deg) = same 68deg angle */
+  --cutx:55%;                       /* where the 68deg step sits */
+  --cutshift:0px;                   /* scrubbed +-8px, subtle */
+  --pad:clamp(20px,4vw,64px);
+  --navh:71px;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  font-family:'Archivo',system-ui,sans-serif;
+  font-size:17px;line-height:1.65;
+  color:var(--black);background:var(--white);
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+::selection{background:var(--red);color:#fff}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip-link{position:absolute;left:12px;top:-60px;z-index:200;background:var(--black);color:#fff;padding:10px 18px;font-weight:700;text-decoration:none;transition:top .2s}
+.skip-link:focus{top:12px}
+
+h1,h2,h3{font-family:'Archivo Black','Archivo',sans-serif;font-weight:400;text-transform:uppercase;line-height:.92;letter-spacing:-.01em}
+.display{font-size:clamp(3rem,10vw,10rem)}
+
+/* ---- shared bits ---- */
+.wrap{max-width:1440px;margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+.stamp{display:flex;align-items:center;gap:.6rem;font-weight:600;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase}
+.stamp svg{width:18px;height:18px;flex:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:.9rem 1.8rem;font-family:'Archivo',sans-serif;font-weight:700;font-size:1rem;text-decoration:none;border:2px solid var(--black);cursor:pointer;position:relative;isolation:isolate;overflow:hidden}
+.btn::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--red);transform:scaleX(0);transform-origin:left center;transition:transform 220ms var(--ease)}
+.btn:hover::before,.btn:focus-visible::before{transform:scaleX(1)}
+.btn-solid{background:var(--black);color:#fff}
+.btn-solid:hover,.btn-solid:focus-visible{border-color:var(--red);color:#fff}
+.btn-outline{background:transparent;color:var(--black)}
+.btn-outline::before{background:var(--black)}
+.btn-outline:hover,.btn-outline:focus-visible{color:#fff}
+.btn-red{background:var(--red);border-color:var(--red);color:#fff}
+.btn-red::before{background:#fff}
+.btn-red:hover,.btn-red:focus-visible{color:var(--black)}
+.btn-white{background:#fff;border-color:#fff;color:var(--black)}
+.btn-white::before{background:var(--black)}
+.btn-white:hover,.btn-white:focus-visible{color:#fff}
+
+/* the 68deg step-cut top edge: horizontal, one hard 68deg diagonal, horizontal */
+.cut-top{
+  clip-path:polygon(
+    0 var(--rise),
+    calc(var(--cutx) + var(--cutshift)) var(--rise),
+    calc(var(--cutx) + var(--cutshift) + var(--run)) 0,
+    100% 0,100% 100%,0 100%);
+  padding-top:calc(var(--rise) + 1px);
+}
+/* on red or black surfaces the red focus ring vanishes: switch to white */
+.cta :focus-visible,.nav-overlay :focus-visible,.proof :focus-visible,.case :focus-visible,.footer :focus-visible{outline-color:#fff}
+
+/* ============================ NAV ============================ */
+.nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid var(--black)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.7rem var(--pad);max-width:1440px;margin:0 auto}
+/* SWAP FOR REAL SVG LOGO */
+.logo{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+.logo-tile{width:46px;height:46px;background:var(--black);position:relative;flex:none}
+.logo-tile::before,.logo-tile::after{content:"";position:absolute;bottom:8px}
+.logo-tile::before{left:8px;border-left:15px solid transparent;border-right:0 solid transparent;border-bottom:30px solid var(--red)}
+.logo-tile::after{right:8px;border-right:15px solid transparent;border-left:0 solid transparent;border-bottom:30px solid #fff}
+.logo-word{font-family:'Archivo Black',sans-serif;font-size:.95rem;line-height:1.05;text-transform:uppercase;letter-spacing:.02em}
+.logo-word small{display:block;font-family:'Archivo',sans-serif;font-weight:600;font-size:.56rem;letter-spacing:.32em}
+.nav-links{display:flex;align-items:center;gap:1.6rem;list-style:none}
+.nav-links a:not(.btn){text-decoration:none;font-weight:600;font-size:.95rem;position:relative;padding:.4rem 0}
+.nav-links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform 180ms var(--ease)}
+.nav-links a:not(.btn):hover::after,.nav-links a:not(.btn):focus-visible::after{transform:scaleX(1)}
+.nav-burger{display:none;background:none;border:2px solid var(--black);width:48px;height:48px;cursor:pointer;position:relative;z-index:120}
+.nav-burger span{display:block;width:22px;height:2px;background:var(--black);margin:5px auto;transition:transform .25s var(--ease),opacity .2s}
+.nav-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-overlay{position:fixed;inset:0;background:var(--red);z-index:110;display:flex;align-items:center;padding:var(--pad);visibility:hidden;opacity:0;transition:opacity .25s var(--ease),visibility 0s .25s}
+.nav-overlay.open{visibility:visible;opacity:1;transition:opacity .25s var(--ease)}
+.nav-overlay ul{list-style:none}
+.nav-overlay a{font-family:'Archivo Black',sans-serif;font-size:3rem;line-height:1.15;color:#fff;text-decoration:none;text-transform:uppercase;display:inline-block;padding:.35rem 0}
+.nav-overlay a:hover,.nav-overlay a:focus-visible{text-decoration:underline;text-decoration-thickness:4px;text-underline-offset:8px}
+.nav-overlay li{transform:translateY(28px);opacity:0}
+.nav-overlay.open li{transform:none;opacity:1;transition:transform .5s var(--ease),opacity .4s;transition-delay:calc(var(--i)*70ms)}
+@media (max-width:860px){
+  .nav-links{display:none}
+  .nav-burger{display:block}
+}
+
+/* ============================ HERO ============================ */
+/* Runway = 150vh of pinned scroll PLUS the hero's own height, so the hero
+   stays pinned (mark framed in the red panel) for the full 150vh choreography
+   and unpins exactly as the proof band arrives. */
+.hero-wrap{height:calc(150vh + 100svh - var(--navh))}
+.hero{position:sticky;top:var(--navh);height:calc(100svh - var(--navh));display:flex;flex-direction:column;background:var(--white);overflow:hidden}
+.hero-stage{position:relative;flex:1;min-height:0}
+.hero-red{position:absolute;inset:0;background:var(--red);
+  clip-path:polygon(52% 0,100% 0,100% 100%,calc(52% + var(--hero-run,34svh)) 100%)}
+.hero-copy{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-start;padding:clamp(1.2rem,5vh,3.2rem) var(--pad) 2rem;max-width:1440px}
+.hero h1{font-size:clamp(2.75rem,7.3vw,7.3rem)}
+.h1-line{display:block;overflow:hidden;padding-bottom:.04em;margin-bottom:-.04em}
+.h1-word{display:inline-block}
+.dot{color:var(--red)}
+.h1-rule{width:min(38ch,52vw);max-width:520px;height:2px;background:var(--black);margin:1.4rem 0 1.6rem;transform-origin:left}
+.hero-sub{max-width:50ch;font-size:1.05rem}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:1.8rem}
+.hero-canvas{position:absolute;z-index:1;top:5%;right:1vw;width:min(30vw,460px);height:62%;pointer-events:none}
+.hero-canvas canvas{width:100%;height:100%;display:block}
+/* static 2D monogram fallback (mobile / reduced motion / no JS) */
+.mono-2d{position:absolute;z-index:1;top:50%;right:7vw;width:min(24vw,300px);aspect-ratio:1;transform:translateY(-50%);display:grid;place-items:end center}
+.mono-2d .tri{position:absolute;bottom:8%}
+/* leg slope 32/13 = tan(68deg): same angle as every diagonal on the page */
+.mono-2d .tri-l{left:16%;width:0;height:0;border-left:13vmin solid transparent;border-bottom:32vmin solid #fff}
+.mono-2d .tri-r{right:16%;width:0;height:0;border-right:13vmin solid transparent;border-bottom:32vmin solid var(--black)}
+.hero-red.has-3d .mono-2d{display:none} /* static mark is the default; WebGL replaces it */
+/* hero marquee */
+.marquee{background:var(--black);color:#fff;overflow:hidden;border-top:1px solid var(--black)}
+.mq-track{display:flex;width:max-content;animation:mq 28s linear infinite}
+.marquee:hover .mq-track{animation-play-state:paused}
+.mq-group{display:flex;white-space:nowrap;font-weight:600;font-size:.95rem;letter-spacing:.12em;text-transform:uppercase;padding:.85rem 0}
+.mq-group b{font-weight:600}
+.mq-star{color:var(--red);padding:0 1.1rem;font-weight:700}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){
+  .mq-track{animation:none}
+}
+
+/* mobile hero: stacked poster */
+@media (max-width:767px){
+  .hero-wrap{height:auto}
+  .hero{position:static;height:auto}
+  .hero-stage{flex:none;display:flex;flex-direction:column}
+  .hero-copy{order:1}
+  .hero-red{order:2}
+  .hero-red{position:relative;inset:auto;clip-path:none;min-height:46svh;--cutx:18%;
+    clip-path:polygon(0 var(--rise),var(--cutx) var(--rise),calc(var(--cutx) + var(--run)) 0,100% 0,100% 100%,0 100%);
+    margin-top:0}
+  .hero-copy{padding-top:2.2rem;padding-bottom:2.6rem}
+  .hero-canvas{display:none}
+  .mono-2d{display:grid;position:absolute;top:54%;right:auto;left:50%;transform:translate(-50%,-50%);width:56vw}
+  .mono-2d .tri-l{border-left-width:16vw;border-bottom-width:40vw} /* 40/16 = tan(68deg) */
+  .mono-2d .tri-r{border-right-width:16vw;border-bottom-width:40vw}
+}
+
+/* ============================ PROOF BAND ============================ */
+.proof{background:var(--black);color:#fff;--cutx:62%;position:relative}
+.proof .wrap{padding-top:clamp(2.5rem,6vw,5rem);padding-bottom:clamp(2.5rem,6vw,5rem)}
+.proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;margin-top:2.2rem}
+.stat b{display:block;font-family:'Archivo Black',sans-serif;font-weight:400;font-size:3.4rem;line-height:1;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.stat span{display:block;margin-top:.55rem;font-weight:500;font-size:.95rem;color:rgba(255,255,255,.7)}
+.stamp-dark{color:#fff}
+@media (max-width:860px){.proof-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:420px){.stat b{font-size:2.7rem}}
+
+/* ============================ WORD WALLS ============================ */
+.wall{background:var(--white);padding:clamp(3.5rem,9vh,7rem) 0}
+.wall + .wall{padding-top:clamp(1.5rem,4vh,3rem)}
+.wall-word{position:relative;font-size:clamp(3.5rem,12vw,11rem);line-height:.95}
+.ww-outline{display:none}
+.ww-fill{display:block;color:var(--black)}
+.wall .ww-fill .dot{color:inherit}            /* walls fill black... */
+.wall-deliver .ww-fill .dot{color:var(--red)} /* ...only the final period fills red */
+.wall-sub{max-width:52ch;margin-top:1.4rem}
+body.kinetic .ww-outline{display:block;-webkit-text-stroke:2px var(--black);color:transparent}
+body.kinetic .ww-outline .dot{color:transparent}
+body.kinetic .ww-fill{position:absolute;inset:0;clip-path:inset(0 100% 0 0)}
+body.kinetic .wall-deliver .ww-outline .dot{-webkit-text-stroke:2px var(--red)}
+
+/* ============================ CASE STUDY ============================ */
+.case{background:var(--black);color:#fff;--cutx:30%}
+.case .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(2rem,5vw,5rem);align-items:center;padding-top:clamp(3rem,8vw,6.5rem);padding-bottom:clamp(3rem,8vw,6.5rem)}
+.duo{position:relative;overflow:hidden;
+  clip-path:polygon(0 0,100% 0,100% calc(100% - 9.9rem),calc(100% - 4rem) 100%,0 100%)} /* 9.9/4 = tan(68deg) */
+.duo img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.12) brightness(.92)}
+.duo::after{content:"";position:absolute;inset:0;background:var(--red);mix-blend-mode:multiply;opacity:.85}
+.case h2{font-size:clamp(2.1rem,4.6vw,4.2rem);margin:1.2rem 0 1.2rem}
+.case p{max-width:46ch}
+.case .btn{margin-top:1.8rem}
+@media (max-width:860px){
+  .case .wrap{grid-template-columns:1fr}
+  .duo{clip-path:polygon(0 0,100% 0,100% calc(100% - 5.5rem),calc(100% - 2.22rem) 100%,0 100%)} /* 5.5/2.22 = tan(68deg) */
+}
+
+/* ============================ CAPABILITIES ============================ */
+.caps{padding:clamp(3.5rem,9vw,7rem) 0}
+.caps-wall{margin-top:2.4rem;line-height:2.1;max-width:1100px}
+.cap{display:inline;font-weight:700;font-size:clamp(1.35rem,2.4vw,2rem);text-decoration:none;text-transform:uppercase;letter-spacing:0;
+  background-image:linear-gradient(var(--red),var(--red));background-repeat:no-repeat;background-size:0% 88%;background-position:0 60%;
+  transition:background-size 180ms var(--ease),color 180ms var(--ease);padding:.1em .05em}
+.cap:hover,.cap:focus-visible{background-size:100% 88%;color:#fff}
+.cap-star{color:var(--red);font-weight:700;font-size:clamp(1.35rem,2.4vw,2rem);padding:0 .55rem}
+.caps-line{margin-top:2rem;font-weight:500}
+
+/* ============================ THE CLIMB ============================ */
+.climb{padding:clamp(3.5rem,9vw,7rem) 0;background:var(--white)}
+.climb-row{display:flex;align-items:flex-end;gap:clamp(.6rem,1.4vw,1.4rem);margin-top:3rem}
+.block{flex:1;background:var(--black);color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:1.1rem 1.1rem 1.2rem;min-width:0}
+.block small{font-weight:600;font-size:.85rem;letter-spacing:.14em;color:rgba(255,255,255,.7)}
+.block b{font-family:'Archivo Black',sans-serif;font-weight:400;font-size:clamp(1.3rem,2.4vw,2.1rem);line-height:1.05;letter-spacing:-.01em;margin-top:.3rem}
+.block-1{height:10rem}.block-2{height:13rem}.block-3{height:16rem}.block-4{height:19rem}.block-5{height:22rem}
+.block-red{background:var(--red)}
+.block-red small{color:rgba(255,255,255,.85)}
+@media (max-width:767px){
+  .climb-row{overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:.8rem;align-items:flex-end}
+  .block{flex:0 0 62vw;scroll-snap-align:start}
+  .block-1{height:11rem}.block-2{height:13rem}.block-3{height:15rem}.block-4{height:17rem}.block-5{height:19rem}
+}
+
+/* ============================ TESTIMONIALS ============================ */
+.words{padding:clamp(3.5rem,9vw,7rem) 0;background:var(--white)}
+.words-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);margin-top:2.6rem}
+.quote{border-top:1px solid var(--black);padding-top:1.6rem}
+.quote .glyph{font-family:'Archivo Black',sans-serif;font-size:4.5rem;line-height:.6;color:var(--red);display:block;margin-bottom:1rem}
+.quote blockquote p{font-size:1.1rem;max-width:44ch}
+.quote figcaption{margin-top:1.1rem;font-weight:600;font-size:.95rem}
+.quote figcaption span{display:block;font-weight:500;color:var(--muted);font-size:.9rem}
+.words-note{margin-top:2.6rem;font-weight:500;color:var(--muted)}
+@media (max-width:767px){.words-grid{grid-template-columns:1fr}}
+
+/* ============================ FINAL CTA ============================ */
+.cta{background:var(--red);color:#fff;--cutx:70%}
+.cta .wrap{padding-top:clamp(3.5rem,9vw,7rem);padding-bottom:clamp(3.5rem,9vw,7rem)}
+.cta h2{font-size:clamp(3rem,8vw,7rem)}
+.cta-sub{margin-top:1.4rem;font-size:1.4rem;font-weight:600;max-width:38ch}
+.cta .btn{margin-top:2.2rem}
+.cta-contacts{margin-top:2.4rem;display:flex;flex-wrap:wrap;gap:2rem;font-weight:700;font-size:1.15rem}
+.cta-contacts a{color:#fff;text-decoration:none;border-bottom:2px solid #fff;padding-bottom:2px}
+.cta-contacts a:hover,.cta-contacts a:focus-visible{border-bottom-color:var(--black);color:#fff}
+
+/* ============================ FOOTER ============================ */
+.footer{background:var(--black);color:#fff;padding:clamp(3rem,7vw,5.5rem) 0 0}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr .7fr;gap:clamp(2rem,5vw,5rem)}
+.footer h3{font-size:1.05rem;letter-spacing:.05em;margin-bottom:1.1rem}
+.footer p,.footer li{color:rgba(255,255,255,.78);font-size:.98rem}
+.footer ul{list-style:none}
+.footer li{margin-bottom:.55rem}
+.footer a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35)}
+.footer a:hover,.footer a:focus-visible{border-bottom-color:var(--red)}
+.footer-bottom{margin-top:clamp(2.5rem,5vw,4rem);border-top:1px solid rgba(255,255,255,.18);padding:1.2rem 0;font-size:.85rem;color:rgba(255,255,255,.6);display:flex;flex-wrap:wrap;gap:.6rem 2rem}
+@media (max-width:767px){.footer-grid{grid-template-columns:1fr}}
+
+/* entrance helpers: JS sets initial states; base = final (HTML-first) */
+@media (prefers-reduced-motion:reduce){
+  .btn::before,.cap,.nav-overlay,.nav-overlay li{transition:none}
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============ NAVIGATION ============ -->
+<header class="nav">
+  <div class="nav-inner">
+    <!-- SWAP FOR REAL SVG LOGO -->
+    <a class="logo" href="#" aria-label="Advanced General Contractors, home">
+      <span class="logo-tile" aria-hidden="true"></span>
+      <span class="logo-word">Advanced<small>General Contractor</small></span>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#capabilities">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="btn btn-solid" href="#contact">Start your project</a></li>
+      </ul>
+    </nav>
+    <button class="nav-burger" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-overlay" id="mobile-menu">
+    <nav aria-label="Mobile">
+      <ul>
+        <li style="--i:0"><a href="#projects">Projects</a></li>
+        <li style="--i:1"><a href="#capabilities">Services</a></li>
+        <li style="--i:2"><a href="#about">About</a></li>
+        <li style="--i:3"><a href="#contact">Contact</a></li>
+        <li style="--i:4"><a href="#contact">Start your project</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO: THE POSTER ============ -->
+<div class="hero-wrap">
+<section class="hero" id="hero" aria-label="Speed. Scale. Perfection.">
+  <div class="hero-stage">
+    <div class="hero-red" aria-hidden="true">
+      <!-- static 2D monogram: mobile / reduced motion fallback -->
+      <div class="mono-2d" aria-hidden="true">
+        <span class="tri tri-l"></span><span class="tri tri-r"></span>
+      </div>
+    </div>
+    <div class="hero-canvas" id="mono-canvas" aria-hidden="true"></div>
+    <div class="hero-copy">
+      <h1>
+        <span class="h1-line"><span class="h1-word">Speed<span class="dot">.</span></span></span>
+        <span class="h1-line"><span class="h1-word">Scale<span class="dot">.</span></span></span>
+        <span class="h1-line"><span class="h1-word">Perfection<span class="dot">.</span></span></span>
+      </h1>
+      <div class="h1-rule" aria-hidden="true"></div>
+      <p class="hero-sub">Advanced General Contractors (AGC), formerly 7Set General Trading. Grade One. All types of construction. The new standard in Ethiopian building.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-solid" href="#contact">Start your project</a>
+        <a class="btn btn-outline" href="#story-video">Watch the story</a>
+      </div>
+    </div>
+  </div>
+  <div class="marquee" aria-hidden="true">
+    <div class="mq-track">
+      <div class="mq-group">
+        <b>GC-1 Grade One Contractor</b><span class="mq-star">*</span><b>2.12B+ ETB Turnover</b><span class="mq-star">*</span><b>Megenagna Delivered in 4 Months</b><span class="mq-star">*</span><b>Built to a New Standard</b><span class="mq-star">*</span>
+        <b>GC-1 Grade One Contractor</b><span class="mq-star">*</span><b>2.12B+ ETB Turnover</b><span class="mq-star">*</span><b>Megenagna Delivered in 4 Months</b><span class="mq-star">*</span><b>Built to a New Standard</b><span class="mq-star">*</span>
+      </div>
+      <div class="mq-group">
+        <b>GC-1 Grade One Contractor</b><span class="mq-star">*</span><b>2.12B+ ETB Turnover</b><span class="mq-star">*</span><b>Megenagna Delivered in 4 Months</b><span class="mq-star">*</span><b>Built to a New Standard</b><span class="mq-star">*</span>
+        <b>GC-1 Grade One Contractor</b><span class="mq-star">*</span><b>2.12B+ ETB Turnover</b><span class="mq-star">*</span><b>Megenagna Delivered in 4 Months</b><span class="mq-star">*</span><b>Built to a New Standard</b><span class="mq-star">*</span>
+      </div>
+    </div>
+  </div>
+  <p class="sr-only">GC-1 Grade One contractor. 2.12 billion plus ETB turnover. Megenagna delivered in 4 months. Built to a new standard.</p>
+</section>
+</div>
+
+<!-- ============ PROOF BAND (black, 68deg cut top) ============ -->
+<section class="proof cut-top" id="about" aria-label="Proof in numbers">
+  <div class="wrap">
+    <p class="stamp stamp-dark"><svg viewBox="0 0 24 24" fill="none" stroke="#E12500" stroke-width="2" aria-hidden="true"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="6"/></svg>01. Proof.</p>
+    <div class="proof-grid">
+      <p class="stat"><b data-count-final="GC-1">GC-1</b><span>Top-tier license, since 2018</span></p>
+      <p class="stat"><b data-count="2.12" data-suffix="B+">2.12B+</b><span>ETB annual turnover</span></p>
+      <p class="stat"><b data-count="1.5" data-suffix="B" data-decimals="1">1.5B</b><span>ETB flagship value</span></p>
+      <p class="stat"><b data-count="4" data-decimals="0">4</b><span>Months to deliver</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WE PLAN. WE BUILD. WE DELIVER. (kinetic word walls) ============ -->
+<section class="wall" aria-labelledby="wall-plan">
+  <div class="wrap">
+    <h2 class="wall-word" id="wall-plan">
+      <span class="ww-outline" aria-hidden="true">We Plan<span class="dot">.</span></span>
+      <span class="ww-fill">We Plan<span class="dot">.</span></span>
+    </h2>
+    <p class="wall-sub">Surveys, engineering, and scheduling before a single bar of steel moves.</p>
+  </div>
+</section>
+<section class="wall" aria-labelledby="wall-build">
+  <div class="wrap">
+    <h2 class="wall-word" id="wall-build">
+      <span class="ww-outline" aria-hidden="true">We Build<span class="dot">.</span></span>
+      <span class="ww-fill">We Build<span class="dot">.</span></span>
+    </h2>
+    <p class="wall-sub">Certified engineers, owned machinery, a safety-first culture.</p>
+  </div>
+</section>
+<section class="wall wall-deliver" aria-labelledby="wall-deliver">
+  <div class="wrap">
+    <h2 class="wall-word" id="wall-deliver">
+      <span class="ww-outline" aria-hidden="true">We Deliver<span class="dot">.</span></span>
+      <span class="ww-fill">We Deliver<span class="dot">.</span></span>
+    </h2>
+    <p class="wall-sub">The Ministry of Transport building. Four months. Zero excuses.</p>
+  </div>
+</section>
+
+<!-- ============ FLAGSHIP CASE STUDY (black) ============ -->
+<!-- VIDEO PLACEHOLDER: "Watch the story" anchors here; swap in the real AGC brand film when available -->
+<section class="case cut-top" id="projects" aria-labelledby="case-h">
+  <span id="story-video"></span>
+  <div class="wrap">
+    <figure class="duo">
+      <!-- REPLACE WITH REAL AGC SITE PHOTO -->
+      <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop" alt="Glass curtain wall facade of a modern high-rise office building" loading="lazy" width="1600" height="1067">
+    </figure>
+    <div>
+      <p class="stamp stamp-dark"><svg viewBox="0 0 24 24" fill="none" stroke="#E12500" stroke-width="2" aria-hidden="true"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="6"/></svg>02. Flagship.</p>
+      <h2 id="case-h">Megenagna. ETB 1.5 Billion. Four Months.</h2>
+      <p>Curtain walls, aluminum paneling, and sunbreakers for the Ministry of Transport building. Many said it would take years. We knew better.</p>
+      <a class="btn btn-red" href="#contact">Explore the project</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CAPABILITIES: THE INDEX WALL ============ -->
+<section class="caps" id="capabilities" aria-labelledby="caps-h">
+  <div class="wrap">
+    <p class="stamp"><svg viewBox="0 0 24 24" fill="none" stroke="#E12500" stroke-width="2" aria-hidden="true"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="6"/></svg><span id="caps-h">03. What We Build.</span></p>
+    <p class="caps-wall">
+      <a class="cap" href="#contact">Structural Construction</a><span class="cap-star" aria-hidden="true">*</span>
+      <a class="cap" href="#contact">Roads and Bridges</a><span class="cap-star" aria-hidden="true">*</span>
+      <a class="cap" href="#contact">Earthworks and Foundations</a><span class="cap-star" aria-hidden="true">*</span>
+      <a class="cap" href="#contact">Industrial and Warehouse</a><span class="cap-star" aria-hidden="true">*</span>
+      <a class="cap" href="#contact">Aluminum and Glass</a><span class="cap-star" aria-hidden="true">*</span>
+      <a class="cap" href="#contact">Curtain Walls and Facades</a><span class="cap-star" aria-hidden="true">*</span>
+      <a class="cap" href="#contact">Interiors and Fit-Out</a><span class="cap-star" aria-hidden="true">*</span>
+      <a class="cap" href="#contact">Project Management</a>
+    </p>
+    <p class="caps-line">One contractor for the entire lifecycle. That is Grade One.</p>
+  </div>
+</section>
+
+<!-- ============ THE CLIMB: GC-4 TO 2.12B+ ============ -->
+<section class="climb" aria-labelledby="climb-h">
+  <div class="wrap">
+    <h2 id="climb-h" style="font-size:clamp(2rem,4.6vw,3.6rem)">The Climb<span class="dot">.</span></h2>
+    <div class="climb-row" role="list" aria-label="License grade timeline">
+      <div class="block block-1" role="listitem"><small>2013</small><b>GC-4</b></div>
+      <div class="block block-2" role="listitem"><small>2015</small><b>GC-3</b></div>
+      <div class="block block-3" role="listitem"><small>2017</small><b>GC-2</b></div>
+      <div class="block block-4 block-red" role="listitem"><small>2018</small><b>GC-1</b></div>
+      <div class="block block-5" role="listitem"><small>Today</small><b>2.12B+</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLIENT WORDS ============ -->
+<section class="words" aria-labelledby="words-h">
+  <div class="wrap">
+    <p class="stamp"><svg viewBox="0 0 24 24" fill="none" stroke="#E12500" stroke-width="2" aria-hidden="true"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="6"/></svg><span id="words-h">04. On the Record.</span></p>
+    <div class="words-grid">
+      <figure class="quote">
+        <span class="glyph" aria-hidden="true">&ldquo;</span>
+        <blockquote><p>Seven S ET Trading PLC has consistently demonstrated professionalism, technical expertise, and a strong commitment to quality, safety, and timely project delivery.</p></blockquote>
+        <figcaption>Mrs. Demitu Feyisa<span>General Manager, Intel Motion</span></figcaption>
+      </figure>
+      <figure class="quote">
+        <span class="glyph" aria-hidden="true">&ldquo;</span>
+        <blockquote><p>The company demonstrated technical competence, adherence to safety and quality standards, and a responsible approach to project execution.</p></blockquote>
+        <figcaption>Design and Construction Works Bureau<span>Addis Ababa City Administration</span></figcaption>
+      </figure>
+    </div>
+    <p class="words-note">Seven client reference letters on file, available on request.</p>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA (red, 68deg cut top) ============ -->
+<section class="cta cut-top" id="contact" aria-labelledby="cta-h">
+  <div class="wrap">
+    <h2 id="cta-h">Let's Build It<span style="color:#fff">.</span></h2>
+    <p class="cta-sub">Tell us what you are planning. We will answer with a schedule.</p>
+    <a class="btn btn-white" href="mailto:sevensettradingplc@gmail.com">Talk to AGC</a>
+    <p class="cta-contacts">
+      <a href="tel:+251974091900">+251 97 409 1900</a>
+      <a href="mailto:sevensettradingplc@gmail.com">sevensettradingplc@gmail.com</a>
+    </p>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>Advanced General Contractors</h3>
+        <p>Advanced General Contractors (AGC). Formerly 7Set General Trading. SEVEN S ET TRADING PLC, Grade One General Contractor.</p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p>Bole Matemiya, City View Addis Building, 2nd floor, Addis Ababa</p>
+        <p><a href="tel:+251974091900">+251 97 409 1900</a></p>
+        <p><a href="mailto:sevensettradingplc@gmail.com">sevensettradingplc@gmail.com</a></p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#capabilities">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Advanced General Contractors. All rights reserved.</span>
+      <span>TIN 0069209303</span>
+      <span>GC-1 General Contractor License</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ MOTION: GSAP 3.13 + ScrollTrigger ============ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" defer></script>
+<script defer>
+window.addEventListener('DOMContentLoaded', function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var mobile = window.matchMedia('(max-width: 767px)').matches;
+
+  /* ---- mobile menu ---- */
+  var burger = document.querySelector('.nav-burger');
+  var overlay = document.getElementById('mobile-menu');
+  function closeMenu(){
+    overlay.classList.remove('open');
+    burger.setAttribute('aria-expanded','false');
+    burger.setAttribute('aria-label','Open menu');
+    document.body.style.overflow='';
+  }
+  burger.addEventListener('click', function(){
+    var open = overlay.classList.toggle('open');
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    document.body.style.overflow = open ? 'hidden' : '';
+    if(open){ overlay.querySelector('a').focus(); }
+  });
+  overlay.addEventListener('click', function(e){ if(e.target.closest('a')) closeMenu(); });
+  document.addEventListener('keydown', function(e){
+    if(e.key==='Escape' && overlay.classList.contains('open')){ closeMenu(); burger.focus(); }
+  });
+
+  /* ---- keep the hero diagonal at exactly 68 degrees ---- */
+  var stage = document.querySelector('.hero-stage');
+  var heroRed = document.querySelector('.hero-red');
+  function setHeroRun(){
+    if(window.matchMedia('(max-width: 767px)').matches) return;
+    var run = stage.offsetHeight * 0.40403; /* 1 / tan(68deg) */
+    heroRed.style.setProperty('--hero-run', run + 'px');
+  }
+  setHeroRun();
+  window.addEventListener('resize', setHeroRun);
+
+  if(reduced || !window.gsap){ return; } /* full reduced-motion experience: final states */
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* ---- hero type slam ---- */
+  gsap.set('.h1-word', {yPercent:100});
+  gsap.set('.h1-rule', {scaleX:0});
+  gsap.to('.h1-word', {yPercent:0, duration:.5, ease:'power4.out', stagger:.12});
+  gsap.to('.h1-rule', {scaleX:1, duration:.5, ease:'power4.out', delay:.62});
+
+  /* ---- headings, stamps, subs: fade-rise 500ms, 16px ---- */
+  gsap.utils.toArray('.stamp, .case h2, #climb-h, .caps-line').forEach(function(el){
+    gsap.from(el, {y:16, autoAlpha:0, duration:.5, ease:'power4.out',
+      scrollTrigger:{trigger:el, start:'top 85%', once:true}});
+  });
+
+  /* ---- proof band counters ---- */
+  gsap.utils.toArray('[data-count]').forEach(function(el){
+    var target = parseFloat(el.getAttribute('data-count'));
+    var suffix = el.getAttribute('data-suffix') || '';
+    var dec = el.hasAttribute('data-decimals') ? parseInt(el.getAttribute('data-decimals'),10) : 2;
+    var obj = {v:0};
+    ScrollTrigger.create({trigger:el, start:'top 85%', once:true, onEnter:function(){
+      gsap.to(obj, {v:target, duration:1.1, ease:'power2.out', onUpdate:function(){
+        el.textContent = obj.v.toFixed(dec) + suffix;
+      }, onComplete:function(){ el.textContent = target.toFixed(dec).replace(/\.0$/,'') + suffix;
+        if(dec===0) el.textContent = Math.round(target) + suffix; }});
+    }});
+  });
+  gsap.utils.toArray('[data-count-final]').forEach(function(el){
+    gsap.from(el, {y:16, autoAlpha:0, duration:.5, ease:'power4.out',
+      scrollTrigger:{trigger:el, start:'top 85%', once:true}});
+  });
+
+  /* ---- word walls: outline fills left to right on scrub (desktop only) ---- */
+  if(!mobile){
+    document.body.classList.add('kinetic');
+    gsap.utils.toArray('.wall').forEach(function(panel){
+      var fill = panel.querySelector('.ww-fill');
+      gsap.fromTo(fill,
+        {clipPath:'inset(0% 100% 0% 0%)'},
+        {clipPath:'inset(0% 0% 0% 0%)', ease:'none',
+         scrollTrigger:{trigger:panel, start:'top 62%', end:'+=40%', scrub:true}});
+    });
+  }
+
+  /* ---- climb blocks rise, 90ms stagger ---- */
+  gsap.from('.block', {y:48, autoAlpha:0, duration:.5, ease:'power4.out', stagger:.09,
+    scrollTrigger:{trigger:'.climb-row', start:'top 80%', once:true}});
+
+  /* ---- diagonal divider slight shift on scrub (max 8px) ---- */
+  gsap.utils.toArray('.cut-top').forEach(function(sec){
+    gsap.fromTo(sec, {'--cutshift':'-8px'}, {'--cutshift':'8px', ease:'none',
+      scrollTrigger:{trigger:sec, start:'top bottom', end:'bottom top', scrub:true}});
+  });
+});
+</script>
+
+<!-- ============ SIGNATURE: THE 3D MONOGRAM (Three.js, lazy) ============ -->
+<script type="module">
+const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const mobile  = window.matchMedia('(max-width: 767px)').matches;
+const holder  = document.getElementById('mono-canvas');
+if(!reduced && !mobile && holder){
+  /* lazy-init after first paint; never block. Quiet WebGL probe first so
+     unsupported machines get the 2D mark with zero console noise. */
+  const boot = () => {
+    let gl = null;
+    try{
+      const t = document.createElement('canvas');
+      gl = t.getContext('webgl2') || t.getContext('webgl');
+    }catch(e){ gl = null; }
+    if(!gl){ showFallback(); return; }
+    import('https://unpkg.com/three@0.160.0/build/three.module.js').then(init).catch(showFallback);
+  };
+  ('requestIdleCallback' in window) ? requestIdleCallback(boot, {timeout:1500}) : setTimeout(boot, 250);
+
+  function showFallback(){ /* static 2D mark is already visible by default */ }
+
+  function init(THREE){
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(35, 1, .1, 50);
+    camera.position.set(0, 0, 5.2);
+    const renderer = new THREE.WebGLRenderer({antialias:true, alpha:true});
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); /* DPR clamp 2 */
+    holder.appendChild(renderer.domElement);
+    document.querySelector('.hero-red').classList.add('has-3d');
+
+    /* the A: two triangular prisms, matching the logo geometry.
+       Graphic, not photoreal: the red prism is self-lit toward brand red so
+       its faces stay in the #E12500 family instead of going maroon. */
+    function prism(pts, color, glow){
+      const shape = new THREE.Shape();
+      shape.moveTo(pts[0][0], pts[0][1]);
+      shape.lineTo(pts[1][0], pts[1][1]);
+      shape.lineTo(pts[2][0], pts[2][1]);
+      shape.closePath();
+      const geo = new THREE.ExtrudeGeometry(shape, {depth:.4, bevelEnabled:false});
+      geo.translate(0, 0, -.2);
+      const mat = new THREE.MeshStandardMaterial({color, flatShading:true, roughness:.5, metalness:0,
+        emissive:color, emissiveIntensity:glow});
+      const mesh = new THREE.Mesh(geo, mat);
+      const edges = new THREE.LineSegments(
+        new THREE.EdgesGeometry(geo),
+        new THREE.LineBasicMaterial({color:0xffffff}) /* white wireframe */
+      );
+      mesh.add(edges);
+      return mesh;
+    }
+    /* leg slope = 2 units rise / .81 run = tan(68deg): the same diagonal as the page */
+    const left  = prism([[-0.81,-1],[0,1],[0,-1]], 0xE12500, .6);  /* red prism, self-lit */
+    const right = prism([[0,-1],[0,1],[0.81,-1]], 0xFAFAF8, .3);   /* white prism */
+    const spinner = new THREE.Group();  /* scroll rotation + idle */
+    const root = new THREE.Group();     /* pointer tilt */
+    spinner.add(left, right);
+    root.add(spinner);
+    scene.add(root);
+
+    scene.add(new THREE.AmbientLight(0xffffff, .55));            /* fill */
+    const key = new THREE.DirectionalLight(0xffffff, 1.4);       /* key */
+    key.position.set(2.5, 3, 4);
+    scene.add(key);
+
+    function size(){
+      const w = holder.clientWidth, h = holder.clientHeight;
+      renderer.setSize(w, h, false);
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+    }
+    size();
+    window.addEventListener('resize', size);
+
+    /* pointer tilt: whole hero, max 18deg, lerped */
+    const hero = document.getElementById('hero');
+    let tx = 0, ty = 0;
+    hero.addEventListener('pointermove', e => {
+      const r = hero.getBoundingClientRect();
+      const nx = (e.clientX - r.left) / r.width  - .5;
+      const ny = (e.clientY - r.top)  / r.height - .5;
+      ty = nx * (18 * Math.PI / 180) * 2;
+      tx = ny * (18 * Math.PI / 180) * 2;
+    });
+    hero.addEventListener('pointerleave', () => { tx = 0; ty = 0; });
+
+    /* scroll choreography: 540deg + prism separation over first 150vh, weld on reassembly */
+    let flashArmed = false, flashT = 0;
+    function progress(){
+      return Math.min(Math.max(window.scrollY / (window.innerHeight * 1.5), 0), 1);
+    }
+
+    let running = false, idle = 0, last = performance.now();
+    function frame(now){
+      if(!running) return;
+      const dt = Math.min((now - last) / 1000, .05);
+      last = now;
+      idle += .15 * dt;                                     /* idle 0.15 rad/s */
+      const p = progress();
+      /* idle spin blends out as the choreography completes, so the weld
+         lands square on the mark at exactly 540deg, not edge-on */
+      spinner.rotation.y = idle * (1 - p) + p * Math.PI * 3;
+      spinner.position.y = Math.sin(now / 4000 * Math.PI * 2) * .06; /* 6px-ish bob, 4s */
+      const sep = Math.sin(Math.PI * p) * .4;               /* deconstruct: 0.8 total */
+      left.position.x  = -sep;
+      right.position.x =  sep;
+      if(p > .3 && p < .9) flashArmed = true;               /* arm mid-choreography only */
+      if(flashArmed && p >= .985){ flashArmed = false; flashT = now; }  /* the weld, one shot */
+      const flashing = (now - flashT) < 60 && flashT > 0;
+      if(flashing){
+        left.material.emissive.setHex(0xffffff);  left.material.emissiveIntensity = 1;
+        right.material.emissive.setHex(0xffffff); right.material.emissiveIntensity = 1;
+      }else{
+        left.material.emissive.setHex(0xE12500);  left.material.emissiveIntensity = .6;
+        right.material.emissive.setHex(0xFAFAF8); right.material.emissiveIntensity = .3;
+      }
+      root.rotation.x += (tx - root.rotation.x) * .08;      /* lerp toward pointer */
+      root.rotation.y += (ty - root.rotation.y) * .08;
+      renderer.render(scene, camera);
+      requestAnimationFrame(frame);
+    }
+    /* render on demand: run only while the hero is on screen */
+    new IntersectionObserver(entries => {
+      const vis = entries[0].isIntersecting;
+      if(vis && !running){ running = true; last = performance.now(); requestAnimationFrame(frame); }
+      if(!vis) running = false;
+    }).observe(hero);
+    running = true; requestAnimationFrame(frame);
+  }
+}
+</script>
+</body>
+</html>
