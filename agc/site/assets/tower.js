@@ -41,7 +41,7 @@ async function init(){
   const scene = new THREE.Scene();
   scene.fog = new THREE.Fog(0x0E0E0E, 26, 52);   /* pushed back so the tower is not washed out */
   const camera = new THREE.PerspectiveCamera(34, 1, 0.1, 100);
-  camera.position.set(0, 1.0, 14.6);
+  camera.position.set(0, 1.0, 16.4);
 
   /* tower dimensions: 5 bays wide, 2 deep, 8 floors, slender high-rise massing */
   const BAY = 0.92, FLOOR = 1.06, BAYS_X = 5, BAYS_Z = 2, FLOORS = 8;
@@ -49,20 +49,20 @@ async function init(){
   const baseY = -3.9;
 
   const tower = new THREE.Group();
-  tower.position.set(4.85, 0.85, 0);   /* base on the lower edge, mass bleeding off the right */
-  tower.scale.setScalar(1.18);        /* more of the frame on the right */
+  tower.position.set(4.30, 0.05, 0);   /* base on the lower edge, mass bleeding off the right */
+  tower.scale.setScalar(1.04);        /* the crown stays in frame so it reads as a tower */
   scene.add(tower);
 
   /* lighting: one cool key, one faint red rim from below */
-  scene.add(new THREE.AmbientLight(0x3C4147, 1.15));
-  const key = new THREE.DirectionalLight(0xBFD3E6, 3.4);
+  scene.add(new THREE.AmbientLight(0x484F57, 1.5));
+  const key = new THREE.DirectionalLight(0xBFD3E6, 4.6);
   key.position.set(-6, 9, 7);
   scene.add(key);
-  const rim = new THREE.PointLight(0xE12500, 34, 26, 2);
-  rim.position.set(4.85, baseY - 2.2, 3.4);
+  const rim = new THREE.PointLight(0xE12500, 46, 30, 2);
+  rim.position.set(4.30, baseY - 2.2, 3.4);
   scene.add(rim);
   const sweep = new THREE.PointLight(0xFFE2D8, 0, 16, 2);
-  sweep.position.set(4.85 - W / 2, baseY, 3.2);
+  sweep.position.set(4.30 - W / 2, baseY, 3.2);
   scene.add(sweep);
 
   /* ---- wireframe lattice: line segments sorted bottom-up for draw-in ---- */
@@ -94,13 +94,17 @@ async function init(){
   const lineGeo = new THREE.BufferGeometry();
   lineGeo.setAttribute('position', new THREE.BufferAttribute(linePos, 3));
   lineGeo.setDrawRange(0, 0);
-  const lineMat = new THREE.LineBasicMaterial({ color: 0x9AA0A6, transparent: true, opacity: 1 });
+  const lineMat = new THREE.LineBasicMaterial({ color: 0xCED3D8, transparent: true, opacity: 1 });
   const wire = new THREE.LineSegments(lineGeo, lineMat);
   tower.add(wire);
 
   /* ---- solid beams: one instanced mesh ---- */
+  /* A high metalness with no environment map renders almost black, which is
+     what made the middle of the build sequence look like an empty frame. Keep
+     the steel mostly dielectric and give it a little self lighting. */
   const beamMat = new THREE.MeshStandardMaterial({
-    color: 0x3E3E3E, metalness: 0.6, roughness: 0.45, transparent: true, opacity: 0
+    color: 0x9AA1A8, metalness: 0.18, roughness: 0.55,
+    emissive: 0x2B3238, emissiveIntensity: 0.55, transparent: true, opacity: 0
   });
   const beamDefs = [];
   colPts.forEach(([x, z]) => beamDefs.push({ p: [x, baseY + H/2, z], s: [0.07, H, 0.07] }));
@@ -132,8 +136,8 @@ async function init(){
     const y = baseY + FLOOR/2 + f*FLOOR;
     for (let i = 0; i < BAYS_X; i++) {                    /* front face */
       const mat = new THREE.MeshStandardMaterial({
-        color: 0x101418, metalness: 0.8, roughness: 0.22,
-        emissive: 0x13222B, emissiveIntensity: 0.85, transparent: true, opacity: 0
+        color: 0x1B242C, metalness: 0.8, roughness: 0.22,
+        emissive: 0x1A3441, emissiveIntensity: 1.05, transparent: true, opacity: 0
       });
       const p = new THREE.Mesh(panelGeo, mat);
       p.position.set(-W/2 + BAY/2 + i*BAY, y, D/2 + 0.02);
@@ -142,8 +146,8 @@ async function init(){
     }
     for (let i = 0; i < BAYS_Z; i++) {                    /* left face, toward camera side */
       const mat = new THREE.MeshStandardMaterial({
-        color: 0x101418, metalness: 0.8, roughness: 0.22,
-        emissive: 0x13222B, emissiveIntensity: 0.85, transparent: true, opacity: 0
+        color: 0x1B242C, metalness: 0.8, roughness: 0.22,
+        emissive: 0x1A3441, emissiveIntensity: 1.05, transparent: true, opacity: 0
       });
       const p = new THREE.Mesh(panelGeo, mat);
       p.position.set(-W/2 - 0.02, y, -D/2 + BAY/2 + i*BAY);
@@ -173,7 +177,7 @@ async function init(){
     /* phase 1: wireframe draws in, bottom to top; a base frame is always present */
     const wf = Math.max(clamp01(p / 0.3), 0.44);   /* header starts on a standing frame */
     lineGeo.setDrawRange(0, Math.floor(segs.length * wf) * 2);
-    lineMat.opacity = 1 - 0.8 * clamp01((p - 0.4) / 0.3);
+    lineMat.opacity = 1 - 0.5 * clamp01((p - 0.52) / 0.3);
     wire.visible = lineMat.opacity > 0.05 && wf > 0;
 
     /* phase 2a: beams solidify */
@@ -246,7 +250,7 @@ async function init(){
     state.cpx += (state.px - state.cpx) * 0.05;
     state.cpy += (state.py - state.cpy) * 0.05;
     const a = Math.sin(t * 0.00022) * (4 * Math.PI / 180);
-    camera.position.x = Math.sin(a) * 14.6 * 0.35 + state.cpx * 0.9;
+    camera.position.x = Math.sin(a) * 16.4 * 0.35 + state.cpx * 0.9;
     camera.position.y = 1.0 - state.cpy * 0.5;
     camera.lookAt(look);
     renderer.render(scene, camera);

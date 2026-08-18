@@ -98,6 +98,8 @@
   <section class="hero" id="hero" aria-label="Introduction">
     <div class="css-tower" aria-hidden="true"></div>
     <div class="container hero-inner">
+      <div class="hero-grid">
+      <div class="hero-copy">
       <p class="label hero-label" data-hero>Grade One General Contractor. Addis Ababa, Ethiopia.</p>
       <h1 class="display">
         <span class="line" data-hero-line>Built to a</span>
@@ -110,6 +112,156 @@
         <a class="ghost-link" href="project-transport-head-office.html">See the Megenagna project
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
         </a>
+      </div>
+      </div>
+
+      <!-- construction-sequence drawing: scrubbed, resolves into the real facade -->
+      <div class="hero-fig" role="img" aria-label="Engineering elevation drawing of the Transport Sectoral Head Office tower at Megenagna that resolves into a photograph of the built curtain wall facade as you scroll">
+        <svg class="bp" id="blueprint" viewBox="0 0 520 680" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <clipPath id="bp-clip">
+                    <path d="M110 80 H330 V560 H110 Z"/>
+                    <path d="M150 56 H230 V80 H150 Z"/>
+                  </clipPath>
+                </defs>
+
+                <!-- shadow layer, mouse-parallax -->
+                <g id="bp-shadow" aria-hidden="true">
+                  <path class="sh" d="M116 566 V86 H336 V566"/>
+                  <path class="sh" d="M406 566 V156 M422 566 V156"/>
+                </g>
+
+                <!-- photo reveal inside the building outline -->
+                <g id="bp-photo" clip-path="url(#bp-clip)">
+                  <image href="img/flagship-facade.webp" x="90" y="40" width="260" height="540" preserveAspectRatio="xMidYMid slice"/>
+                </g>
+
+                <!-- 1. foundation -->
+                <g id="bp-found">
+                  <path class="s2" d="M30 560 H490"/>
+                  <path class="s" d="M95 574 l14 -14"/>
+                  <path class="s" d="M117 574 l14 -14"/>
+                  <path class="s" d="M139 574 l14 -14"/>
+                  <path class="s" d="M161 574 l14 -14"/>
+                  <path class="s" d="M183 574 l14 -14"/>
+                  <path class="s" d="M205 574 l14 -14"/>
+                  <path class="s" d="M227 574 l14 -14"/>
+                  <path class="s" d="M249 574 l14 -14"/>
+                  <path class="s" d="M271 574 l14 -14"/>
+                  <path class="s" d="M293 574 l14 -14"/>
+                  <path class="s" d="M315 574 l14 -14"/>
+                  <path class="s" d="M337 574 l14 -14"/>
+                  <path class="s2" d="M96 560 v16 h30 v-16"/>
+                  <path class="s2" d="M314 560 v16 h30 v-16"/>
+                  <path class="sd" d="M110 44 V572"/>
+                  <path class="sd" d="M183 44 V572"/>
+                  <path class="sd" d="M257 44 V572"/>
+                  <path class="sd" d="M330 44 V572"/>
+                </g>
+
+                <!-- 2. structure -->
+                <g id="bp-struct">
+                  <path class="s2" d="M110 560 V80"/>
+                  <path class="s2" d="M330 560 V80"/>
+                  <path class="s2" d="M110 80 H330"/>
+                  <path class="s2" d="M150 80 V56 H230 V80"/>
+                  <path class="s" d="M110 528 H330"/>
+                  <path class="s" d="M110 496 H330"/>
+                  <path class="s" d="M110 464 H330"/>
+                  <path class="s" d="M110 432 H330"/>
+                  <path class="s" d="M110 400 H330"/>
+                  <path class="s" d="M110 368 H330"/>
+                  <path class="s" d="M110 336 H330"/>
+                  <path class="s" d="M110 304 H330"/>
+                  <path class="s" d="M110 272 H330"/>
+                  <path class="s" d="M110 240 H330"/>
+                  <path class="s" d="M110 208 H330"/>
+                  <path class="s" d="M110 176 H330"/>
+                  <path class="s" d="M110 144 H330"/>
+                  <path class="s" d="M110 112 H330"/>
+                  <!-- tower crane -->
+                  <path class="s" d="M400 560 V150"/>
+                  <path class="s" d="M416 560 V150"/>
+                  <path class="s" d="M400 560 L416 536 L400 512 L416 488 L400 464 L416 440 L400 416 L416 392 L400 368 L416 344 L400 320 L416 296 L400 272 L416 248 L400 224 L416 200 L400 176 L416 152"/>
+                  <path class="s" d="M400 150 L408 126 L416 150"/>
+                  <path class="s2" d="M366 150 H508"/>
+                  <path class="s" d="M408 126 L508 150 M408 126 L366 150"/>
+                  <path class="s" d="M366 150 v14 h22 v-14"/>
+                  <path class="s" d="M474 152 V238"/>
+                  <path class="s" d="M468 238 h12 M474 238 v10 a5 5 0 1 0 .1 0"/>
+                </g>
+
+                <!-- 3. curtain-wall mullions -->
+                <g id="bp-facade">
+                  <path class="s" d="M124 112 V560"/>
+                  <path class="s" d="M138 112 V560"/>
+                  <path class="s" d="M152 112 V560"/>
+                  <path class="s" d="M166 112 V560"/>
+                  <path class="s" d="M180 112 V560"/>
+                  <path class="s" d="M194 112 V560"/>
+                  <path class="s" d="M208 112 V560"/>
+                  <path class="s" d="M222 112 V560"/>
+                  <path class="s" d="M236 112 V560"/>
+                  <path class="s" d="M250 112 V560"/>
+                  <path class="s" d="M264 112 V560"/>
+                  <path class="s" d="M278 112 V560"/>
+                  <path class="s" d="M292 112 V560"/>
+                  <path class="s" d="M306 112 V560"/>
+                  <path class="s" d="M320 112 V560"/>
+                </g>
+
+                <!-- 4. sunbreaker fins, red -->
+                <g id="bp-fins">
+                  <path class="sr" d="M110 112 l-14 -8"/>
+                  <path class="sr" d="M110 144 l-14 -8"/>
+                  <path class="sr" d="M110 176 l-14 -8"/>
+                  <path class="sr" d="M110 208 l-14 -8"/>
+                  <path class="sr" d="M110 240 l-14 -8"/>
+                  <path class="sr" d="M110 272 l-14 -8"/>
+                  <path class="sr" d="M110 304 l-14 -8"/>
+                  <path class="sr" d="M110 336 l-14 -8"/>
+                  <path class="sr" d="M110 368 l-14 -8"/>
+                  <path class="sr" d="M110 400 l-14 -8"/>
+                  <path class="sr" d="M110 432 l-14 -8"/>
+                  <path class="sr" d="M110 464 l-14 -8"/>
+                  <path class="sr" d="M110 496 l-14 -8"/>
+                  <path class="sr" d="M110 528 l-14 -8"/>
+                </g>
+
+                <!-- 5. dimensions, levels, axes, title block -->
+                <g id="bp-dims">
+                  <path class="s" d="M110 566 V600 M330 566 V600"/>
+                  <path class="s" id="bp-blink" d="M110 592 H330"/>
+                  <path class="s" d="M110 592 l10 -3.5 M110 592 l10 3.5 M330 592 l-10 -3.5 M330 592 l-10 3.5"/>
+                  <path class="s" d="M104 80 H70 M104 560 H70"/>
+                  <path class="s" d="M76 80 V560"/>
+                  <path class="s" d="M76 80 l-3.5 10 M76 80 l3.5 10 M76 560 l-3.5 -10 M76 560 l3.5 -10"/>
+                  <path class="s" d="M330 560 h16 M340 556 l6 8 M352 556 l-6 8"/>
+                  <path class="s" d="M330 304 h16 M340 300 l6 8 M352 300 l-6 8"/>
+                  <path class="s" d="M330 80 h16 M340 76 l6 8 M352 76 l-6 8"/>
+                  <circle class="s" cx="110" cy="30" r="10"/>
+                  <circle class="s" cx="183" cy="30" r="10"/>
+                  <circle class="s" cx="257" cy="30" r="10"/>
+                  <circle class="s" cx="330" cy="30" r="10"/>
+                  <path class="s" d="M368 608 H504 V666 H368 Z"/>
+                  <path class="s" d="M368 628 H504 M368 648 H504"/>
+                  <g class="bp-txt">
+                    <text x="106" y="34" text-anchor="middle">A</text>
+                    <text x="179" y="34" text-anchor="middle">B</text>
+                    <text x="253" y="34" text-anchor="middle">C</text>
+                    <text x="326" y="34" text-anchor="middle">D</text>
+                    <text x="220" y="586" text-anchor="middle">36.00</text>
+                    <text x="66" y="322" text-anchor="middle" transform="rotate(-90 66 322)">64.40</text>
+                    <text x="358" y="564">+0.00</text>
+                    <text x="358" y="308">+25.60</text>
+                    <text x="358" y="84">+48.00</text>
+                    <text class="tb-text" x="374" y="622">AGC. DWG 01.</text>
+                    <text class="tb-text" x="374" y="642">MEGENAGNA.</text>
+                    <text class="tb-text" x="374" y="661">ELEV. EAST. 1:200</text>
+                  </g>
+                </g>
+              </svg>
+      </div>
       </div>
     </div>
     <div class="scroll-cue" aria-hidden="true"></div>
@@ -154,8 +306,8 @@
           <li><span class="client-chip"><img src="logos/addis-ababa.png" alt="Addis Ababa City Administration logo" loading="lazy" decoding="async" width="208" height="104"></span></li>
           <li><span class="client-chip"><img src="logos/gift.png" alt="Gift Real Estate logo" loading="lazy" decoding="async" width="208" height="104"></span></li>
           <li><span class="client-chip"><img src="logos/temer.png" alt="Temer Properties logo" loading="lazy" decoding="async" width="208" height="104"></span></li>
-          <li><span class="client-chip"><img src="logos/intelmotion.png" alt="Intel Motion logo" loading="lazy" decoding="async" width="208" height="104"></span></li>
-          <li><span class="client-chip"><img src="logos/pluto.png" alt="Pluto Real Estate logo" loading="lazy" decoding="async" width="208" height="104"></span></li>
+          <li><span class="client-chip client-chip--wide"><img src="logos/intelmotion.png" alt="Intel Motion logo" loading="lazy" decoding="async" width="208" height="104"></span></li>
+          <li><span class="client-chip client-chip--wide"><img src="logos/pluto.png" alt="Pluto Real Estate logo" loading="lazy" decoding="async" width="208" height="104"></span></li>
           <li><span class="client-chip client-chip--bleed"><img src="logos/jenboro.png" alt="Jenboro Real Estate logo" loading="lazy" decoding="async" width="208" height="104"></span></li>
           <li><span class="client-chip"><img src="logos/alea.png" alt="African Leadership Excellence Academy logo" loading="lazy" decoding="async" width="208" height="104"></span></li>
         </ul>
@@ -163,8 +315,8 @@
           <li><span class="client-chip"><img src="logos/addis-ababa.png" alt="" loading="lazy" decoding="async" width="208" height="104"></span></li>
           <li><span class="client-chip"><img src="logos/gift.png" alt="" loading="lazy" decoding="async" width="208" height="104"></span></li>
           <li><span class="client-chip"><img src="logos/temer.png" alt="" loading="lazy" decoding="async" width="208" height="104"></span></li>
-          <li><span class="client-chip"><img src="logos/intelmotion.png" alt="" loading="lazy" decoding="async" width="208" height="104"></span></li>
-          <li><span class="client-chip"><img src="logos/pluto.png" alt="" loading="lazy" decoding="async" width="208" height="104"></span></li>
+          <li><span class="client-chip client-chip--wide"><img src="logos/intelmotion.png" alt="" loading="lazy" decoding="async" width="208" height="104"></span></li>
+          <li><span class="client-chip client-chip--wide"><img src="logos/pluto.png" alt="" loading="lazy" decoding="async" width="208" height="104"></span></li>
           <li><span class="client-chip client-chip--bleed"><img src="logos/jenboro.png" alt="" loading="lazy" decoding="async" width="208" height="104"></span></li>
           <li><span class="client-chip"><img src="logos/alea.png" alt="" loading="lazy" decoding="async" width="208" height="104"></span></li>
         </ul>
@@ -189,8 +341,7 @@
         </div>
         <div class="act-right">
           <div class="act-img">
-            <!-- REPLACE WITH REAL AGC SITE PHOTO -->
-            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=70&auto=format&fit=crop" alt="Engineer drafting a structural drawing at a site desk" loading="lazy">
+            <picture><source srcset="img/flagship-facade.webp" type="image/webp"><img src="img/flagship-facade.jpg" alt="The Transport Sectoral Head Office at Megenagna, Addis Ababa, curtain wall and aluminum fins by AGC" loading="lazy" decoding="async"></picture>
           </div>
         </div>
       </div>
@@ -205,8 +356,7 @@
         </div>
         <div class="act-right">
           <div class="act-img">
-            <!-- REPLACE WITH REAL AGC SITE PHOTO -->
-            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&q=70&auto=format&fit=crop" alt="Construction crew standing over a reinforced concrete slab in progress" loading="lazy">
+            <picture><source srcset="img/flagship-corner.webp" type="image/webp"><img src="img/flagship-corner.jpg" alt="Curtain wall and vertical aluminum fins wrapping the corner of the Megenagna tower" loading="lazy" decoding="async"></picture>
           </div>
         </div>
       </div>
@@ -221,8 +371,7 @@
         </div>
         <div class="act-right">
           <div class="act-img">
-            <!-- REPLACE WITH REAL AGC SITE PHOTO -->
-            <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&q=70&auto=format&fit=crop" alt="Completed high-rise towers lit at night" loading="lazy">
+            <picture><source srcset="img/flagship-street.webp" type="image/webp"><img src="img/flagship-street.jpg" alt="The completed Megenagna tower seen from the street, curtain wall facade by AGC" loading="lazy" decoding="async"></picture>
           </div>
         </div>
       </div>
@@ -235,8 +384,7 @@
        ============================================================ -->
   <section class="flagship" id="flagship" aria-label="Flagship project">
     <div class="flagship-media" aria-hidden="false">
-      <!-- REPLACE WITH REAL AGC SITE PHOTO -->
-      <img id="flagshipImg" src="https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?w=2000&q=72&auto=format&fit=crop" alt="Low angle view of glass curtain wall towers rising into fog" loading="lazy">
+      <picture><source srcset="img/projects-bg-sm.webp 1200w, img/projects-bg.webp 2400w" sizes="100vw" type="image/webp"><img id="flagshipImg" src="img/projects-bg.jpg" srcset="img/projects-bg-sm.jpg 1200w, img/projects-bg.jpg 2400w" sizes="100vw" alt="Three views of the Transport Sectoral Head Office tower at Megenagna built by AGC" loading="lazy" decoding="async"></picture>
     </div>
     <div class="flagship-scrim" aria-hidden="true"></div>
     <div class="container flagship-content">
@@ -262,14 +410,14 @@
         <h2 class="display" data-reveal>All types of construction. One standard.</h2>
       </div>
       <ul class="cap-list">
-        <li class="cap-row" data-cap><span class="cap-num">01</span><span class="cap-name">Structural Construction</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></li>
-        <li class="cap-row" data-cap><span class="cap-num">02</span><span class="cap-name">Roads and Bridges</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></li>
-        <li class="cap-row" data-cap><span class="cap-num">03</span><span class="cap-name">Earthworks and Foundations</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></li>
-        <li class="cap-row" data-cap><span class="cap-num">04</span><span class="cap-name">Industrial and Warehouse</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></li>
-        <li class="cap-row" data-cap><span class="cap-num">05</span><span class="cap-name">Aluminum and Glass</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></li>
-        <li class="cap-row" data-cap><span class="cap-num">06</span><span class="cap-name">Curtain Walls and Facades</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></li>
-        <li class="cap-row" data-cap><span class="cap-num">07</span><span class="cap-name">Interiors and Fit-Out</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></li>
-        <li class="cap-row" data-cap><span class="cap-num">08</span><span class="cap-name">Project Management</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></li>
+        <li><a class="cap-row" data-cap href="services.html#structural"><span class="cap-num">01</span><span class="cap-name">Structural Construction</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></li>
+        <li><a class="cap-row" data-cap href="services.html#roads"><span class="cap-num">02</span><span class="cap-name">Roads and Bridges</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></li>
+        <li><a class="cap-row" data-cap href="services.html#earthworks"><span class="cap-num">03</span><span class="cap-name">Earthworks and Foundations</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></li>
+        <li><a class="cap-row" data-cap href="services.html#industrial"><span class="cap-num">04</span><span class="cap-name">Industrial and Warehouse</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></li>
+        <li><a class="cap-row" data-cap href="services.html#aluminum"><span class="cap-num">05</span><span class="cap-name">Aluminum and Glass</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></li>
+        <li><a class="cap-row" data-cap href="services.html#curtain-wall"><span class="cap-num">06</span><span class="cap-name">Curtain Walls and Facades</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></li>
+        <li><a class="cap-row" data-cap href="services.html#interiors"><span class="cap-num">07</span><span class="cap-name">Interiors and Fit-Out</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></li>
+        <li><a class="cap-row" data-cap href="services.html#management"><span class="cap-num">08</span><span class="cap-name">Project Management</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="square" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></li>
       </ul>
     </div>
   </section>
@@ -282,6 +430,7 @@
       <div class="section-head">
         <p class="label" data-reveal>The climb to Grade One</p>
         <h2 class="display" data-reveal>Five years. Four license tiers.</h2>
+        <p class="sec-dek" data-reveal style="margin-top:18px;">The full record, the leadership and the registration sit on the <a href="about.html">about page</a>.</p>
       </div>
     </div>
     <div class="container">
@@ -346,7 +495,7 @@
           </figcaption>
         </figure>
       </div>
-      <p class="quotes-note">Seven client reference letters on file, available on request.</p>
+      <p class="quotes-note">Seven client reference letters on file, available on request. Read them all on the <a href="projects.html">projects page</a>.</p>
     </div>
   </section>
 

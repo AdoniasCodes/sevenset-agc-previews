@@ -100,6 +100,66 @@
 
     return function(){};
   });
+  /* ---------- hero blueprint: scrubbed construction sequence ----------
+     Ported from the Ledger option. Foundation is drawn at load, because the
+     survey is already done; scrolling erects the rest and then resolves the
+     real photograph inside the outline. ---------------------------------- */
+  var bp = document.getElementById('blueprint');
+  var wide = window.matchMedia('(min-width: 768px)').matches;
+  var motionOK = window.matchMedia('(prefers-reduced-motion: no-preference)').matches;
+
+  if (bp && wide && motionOK) {
+    bp.classList.add('bp-armed');
+    var bpGroups = ['#bp-facade', '#bp-fins', '#bp-dims'];
+    var bpWindows = [[0, .50], [.50, .72], [.72, .90]];
+    var bpTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.hero', start: 'top top', end: '+=70%', scrub: 0.4,
+        onUpdate: function(st){
+          bp.classList.toggle('bp-done', st.progress > 0.98);
+        }
+      }
+    });
+    bpGroups.forEach(function(sel, gi){
+      var els = bp.querySelectorAll(sel + ' path, ' + sel + ' circle');
+      var w = bpWindows[gi], span = w[1] - w[0];
+      els.forEach(function(el, i){
+        var each = span / els.length;
+        var at = w[0] + i * each * 0.72;
+        if (el.classList.contains('sd')) {
+          /* dashed axis lines stay dashed, so fade them rather than draw them */
+          gsap.set(el, { opacity: 0 });
+          bpTl.to(el, { opacity: 1, duration: each * 2.2, ease: 'none' }, at);
+          return;
+        }
+        var len;
+        try { len = el.getTotalLength(); } catch (e) { len = 300; }
+        gsap.set(el, { strokeDasharray: len, strokeDashoffset: len });
+        bpTl.to(el, { strokeDashoffset: 0, duration: each * 2.2, ease: 'none' }, at);
+      });
+    });
+    gsap.set('#bp-dims .bp-txt', { opacity: 0 });
+    bpTl.to('#bp-dims .bp-txt', { opacity: 1, duration: 0.08, ease: 'none' }, 0.86);
+    gsap.set('#bp-photo image', { opacity: 0 });
+    bpTl.to('#bp-photo image', { opacity: 1, duration: 0.22, ease: 'none' }, 0.62);
+
+    /* lerped pointer parallax on the shadow layer only */
+    var btx = 0, bty = 0, bcx = 0, bcy = 0;
+    document.querySelector('.hero').addEventListener('mousemove', function(e){
+      btx = (e.clientX / window.innerWidth - 0.5) * 8;
+      bty = (e.clientY / window.innerHeight - 0.5) * 8;
+    }, { passive: true });
+    (function bpLerp(){
+      bcx += (btx - bcx) * 0.06; bcy += (bty - bcy) * 0.06;
+      gsap.set('#bp-shadow', { x: bcx, y: bcy });
+      requestAnimationFrame(bpLerp);
+    })();
+  } else if (bp) {
+    /* narrow or reduced motion: fully drawn, photograph already revealed */
+    bp.classList.add('bp-done');
+  }
+
+
   /* ---------- desktop-only choreography ----------
      Every block guards its own elements, because these assets are shared by
      every page and only the homepage has the movements, flagship and journey
