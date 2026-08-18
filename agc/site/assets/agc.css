@@ -775,3 +775,96 @@ header.site-nav{z-index:50;}
 
 /* capability rows on the homepage now lead to the matching service */
 a.cap-row{cursor:pointer;}
+
+/* ============================================================
+   INDIVIDUAL SERVICE PAGES
+   ============================================================ */
+.svc-head{position:relative;padding-top:200px;padding-bottom:86px;overflow:hidden;}
+.svc-head::after{display:none;}
+.svc-head-media{position:absolute;inset:0;z-index:0;}
+.svc-head-media img{
+  width:100%;height:100%;object-fit:cover;
+  filter:saturate(.5) contrast(1.06) brightness(.82);
+}
+.svc-head-scrim{
+  position:absolute;inset:0;z-index:1;
+  background:
+    linear-gradient(90deg, rgba(14,14,14,.95) 0%, rgba(14,14,14,.74) 42%, rgba(14,14,14,.24) 100%),
+    linear-gradient(0deg, rgba(14,14,14,.9) 0%, rgba(14,14,14,.3) 60%, rgba(14,14,14,.72) 100%);
+}
+.svc-head-inner{position:relative;z-index:2;}
+.svc-head-kicker{color:var(--red);margin-bottom:16px;}
+.svc-head h1{font-size:clamp(2.5rem, 6vw, 5rem);}
+
+/* the numbered "how" list on a service page */
+.how-list{list-style:none;counter-reset:how;margin-top:28px;}
+.how-list li{
+  counter-increment:how;position:relative;padding:14px 0 14px 46px;
+  border-top:1px solid var(--hairline);color:var(--ink-soft);font-size:15.5px;line-height:1.6;
+}
+.how-list li:last-child{border-bottom:1px solid var(--hairline);}
+.how-list li::before{
+  content:counter(how,decimal-leading-zero);position:absolute;left:0;top:14px;
+  font-family:var(--font-display);font-size:.95rem;color:var(--red);
+}
+.svc-proof{
+  border-left:2px solid var(--red);padding-left:18px;margin-top:26px;
+}
+.svc-proof strong{color:var(--paper);font-weight:500;}
+.svc-photo-note{
+  margin-top:22px;font-size:12.5px;color:var(--muted);
+  border:1px solid var(--hairline);display:inline-block;padding:8px 14px;
+}
+
+/* related services */
+.rel-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;}
+.rel-card{
+  display:flex;align-items:center;gap:14px;
+  border:1px solid var(--hairline);padding:24px 22px;min-height:44px;
+  transition:border-color .2s var(--ease-out), transform .2s var(--ease-out);
+}
+.rel-card:hover{border-color:var(--red);transform:translateY(-3px);}
+.rel-card .rel-n{font-family:var(--font-display);font-size:1rem;color:var(--red);}
+.rel-card .rel-name{flex:1;font-weight:600;font-size:16px;color:var(--paper);}
+.rel-card svg{color:var(--muted);flex:0 0 auto;}
+.rel-card:hover svg{color:var(--red);}
+
+/* the services hub becomes a set of cards that lead to the eight pages */
+.svc-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;}
+.svc-card{
+  display:block;background:var(--bg-2);border:1px solid var(--hairline);
+  transition:border-color .25s var(--ease-out), transform .25s var(--ease-out);
+}
+.svc-card:hover{border-color:var(--red);transform:translateY(-4px);}
+.svc-card-media{position:relative;aspect-ratio:16/10;overflow:hidden;background:#141414;}
+.svc-card-media img{
+  width:100%;height:100%;object-fit:cover;
+  filter:saturate(.45) contrast(1.06) brightness(.74);
+  transition:transform .6s var(--ease-out), filter .4s var(--ease-out);
+}
+.svc-card:hover .svc-card-media img{transform:scale(1.04);filter:saturate(.7) brightness(.92);}
+.svc-card-n{
+  position:absolute;left:0;top:0;background:var(--red);color:#fff;
+  font-family:var(--font-display);font-size:.95rem;padding:8px 14px;
+}
+.svc-card-body{padding:26px 26px 30px;}
+.svc-card h3{font-size:1.4rem;margin-bottom:12px;line-height:1.15;}
+.svc-card p{color:var(--muted);font-size:15px;}
+.svc-card .svc-card-go{
+  display:inline-flex;align-items:center;gap:9px;margin-top:20px;
+  font-size:14px;font-weight:600;color:var(--paper);
+}
+.svc-card:hover .svc-card-go{color:var(--red);}
+
+@media (max-width:1023.98px){
+  .rel-grid{grid-template-columns:1fr;}
+  .svc-cards{grid-template-columns:1fr;gap:22px;}
+}
+@media (max-width:767.98px){
+  .svc-head{padding-top:150px;padding-bottom:60px;}
+  .svc-head-scrim{background:linear-gradient(0deg, rgba(14,14,14,.96) 0%, rgba(14,14,14,.72) 55%, rgba(14,14,14,.88) 100%);}
+}
+@media (prefers-reduced-motion: reduce){
+  .svc-card:hover,.rel-card:hover{transform:none;}
+  .svc-card:hover .svc-card-media img{transform:none;}
+}
