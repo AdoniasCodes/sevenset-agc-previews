@@ -78,7 +78,7 @@ a{color:inherit;text-decoration:none;}
 .skip-link:focus-visible{top:12px;}
 
 /* layers */
-.scene-canvas{position:fixed;inset:0;z-index:0;pointer-events:none;filter:brightness(.65);}
+.scene-canvas{position:fixed;inset:0;z-index:0;pointer-events:none;filter:brightness(1.06) contrast(1.05);}
 main, .site-footer{position:relative;z-index:1;}
 header.site-nav{z-index:50;}
 
@@ -178,6 +178,12 @@ header.site-nav{z-index:50;}
   padding-top:90px;
   overflow:hidden;
 }
+.hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:1;
+  background:linear-gradient(90deg,
+    rgba(14,14,14,.93) 0%, rgba(14,14,14,.82) 26%, rgba(14,14,14,.4) 44%,
+    rgba(14,14,14,.06) 56%, rgba(14,14,14,0) 64%);
+}
 .hero-inner{position:relative;z-index:2;width:100%;}
 .hero-label{margin-bottom:26px;}
 .hero h1{font-size:clamp(3rem, 9vw, 9rem);}
@@ -269,10 +275,13 @@ header.site-nav{z-index:50;}
   content:"";position:absolute;inset:0;
   background:linear-gradient(0deg, rgba(14,14,14,.85) 0%, rgba(14,14,14,.15) 55%, rgba(14,14,14,.35) 100%);
 }
-/* left scrim so type wins over the 3D scene */
+/* left scrim so type wins over the 3D scene.
+   It clears by 58% so the tower owns the right side of the frame. */
 .movements::before{
   content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(90deg, rgba(14,14,14,.88) 0%, rgba(14,14,14,.45) 45%, rgba(14,14,14,0) 70%);
+  background:linear-gradient(90deg,
+    rgba(14,14,14,.95) 0%, rgba(14,14,14,.9) 24%, rgba(14,14,14,.52) 40%,
+    rgba(14,14,14,.1) 51%, rgba(14,14,14,0) 58%);
 }
 /* pinned mode, applied by JS on desktop only */
 .movements.is-pinned{height:100svh;overflow:hidden;}
@@ -410,6 +419,35 @@ header.site-nav{z-index:50;}
 }
 
 /* ============================================================
+   CLIENT TICKER
+   ============================================================ */
+.clients{position:relative;z-index:2;background:var(--bg);border-bottom:1px solid var(--hairline);}
+.clients-head{padding:38px 0 20px;}
+.ticker{position:relative;overflow:hidden;border-top:1px solid var(--hairline);}
+/* edge fades so logos enter and leave the strip instead of being cut */
+.ticker::before,.ticker::after{
+  content:"";position:absolute;top:0;bottom:0;width:110px;z-index:2;pointer-events:none;
+}
+.ticker::before{left:0;background:linear-gradient(90deg, var(--bg) 0%, rgba(14,14,14,0) 100%);}
+.ticker::after{right:0;background:linear-gradient(270deg, var(--bg) 0%, rgba(14,14,14,0) 100%);}
+.ticker-track{display:flex;width:max-content;animation:marquee 46s linear infinite;}
+.ticker:hover .ticker-track,
+.ticker:focus-within .ticker-track{animation-play-state:paused;}
+.ticker-set{display:flex;list-style:none;}
+.ticker-set li{flex:0 0 auto;padding:24px 13px;}
+.client-chip{
+  display:flex;align-items:center;justify-content:center;
+  width:208px;height:104px;padding:15px 22px;background:#F4F4F4;
+  opacity:.9;transition:opacity .3s var(--ease-out), transform .3s var(--ease-out);
+}
+.client-chip img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block;}
+/* a logo that ships on its own coloured tile fills the chip instead of sitting in it */
+.client-chip--bleed{padding:0;}
+.client-chip--bleed img{width:100%;height:100%;max-width:none;max-height:none;object-fit:cover;}
+.ticker-set li:hover .client-chip{opacity:1;transform:translateY(-3px);}
+@keyframes marquee{from{transform:translateX(0);} to{transform:translateX(-50%);}}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width:1023.98px){
@@ -435,6 +473,9 @@ header.site-nav{z-index:50;}
   .t-node{width:255px;}
   .flagship-content{padding-top:220px;}
   .hero{padding-top:110px;padding-bottom:80px;}
+  .client-chip{width:152px;height:80px;padding:12px 16px;}
+  .ticker-set li{padding:18px 9px;}
+  .ticker::before,.ticker::after{width:52px;}
 }
 
 /* no-JS fallbacks: show static act imagery and CSS tower */
@@ -448,6 +489,11 @@ header.site-nav{z-index:50;}
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto;}
   *,*::before,*::after{animation:none !important;transition:none !important;}
+  /* the strip becomes a static wrapped logo wall rather than a cropped row */
+  .ticker-track{width:100%;flex-wrap:wrap;}
+  .ticker-set{flex-wrap:wrap;justify-content:center;width:100%;}
+  .ticker-set[aria-hidden="true"]{display:none;}
+  .ticker::before,.ticker::after{display:none;}
   .scene-canvas{display:none;}
   .css-tower{display:block;}
   .act-img{display:block;}
@@ -556,6 +602,37 @@ header.site-nav{z-index:50;}
           <span class="proof-num display" data-count="4" data-decimals="0" data-suffix="">4</span>
           <span class="label">Months to deliver it</span>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CLIENT TICKER
+       ============================================================ -->
+  <section class="clients" aria-label="Selected clients and partners">
+    <div class="container clients-head">
+      <p class="label">Selected clients and partners</p>
+    </div>
+    <div class="ticker">
+      <div class="ticker-track">
+        <ul class="ticker-set">
+          <li><span class="client-chip"><img src="logos/addis-ababa.png" alt="Addis Ababa City Administration logo" loading="lazy" decoding="async" width="208" height="104"></span></li>
+          <li><span class="client-chip"><img src="logos/gift.png" alt="Gift Real Estate logo" loading="lazy" decoding="async" width="208" height="104"></span></li>
+          <li><span class="client-chip"><img src="logos/temer.png" alt="Temer Properties logo" loading="lazy" decoding="async" width="208" height="104"></span></li>
+          <li><span class="client-chip"><img src="logos/intelmotion.png" alt="Intel Motion logo" loading="lazy" decoding="async" width="208" height="104"></span></li>
+          <li><span class="client-chip"><img src="logos/pluto.png" alt="Pluto Real Estate logo" loading="lazy" decoding="async" width="208" height="104"></span></li>
+          <li><span class="client-chip client-chip--bleed"><img src="logos/jenboro.png" alt="Jenboro Real Estate logo" loading="lazy" decoding="async" width="208" height="104"></span></li>
+          <li><span class="client-chip"><img src="logos/alea.png" alt="African Leadership Excellence Academy logo" loading="lazy" decoding="async" width="208" height="104"></span></li>
+        </ul>
+        <ul class="ticker-set" aria-hidden="true">
+          <li><span class="client-chip"><img src="logos/addis-ababa.png" alt="" loading="lazy" decoding="async" width="208" height="104"></span></li>
+          <li><span class="client-chip"><img src="logos/gift.png" alt="" loading="lazy" decoding="async" width="208" height="104"></span></li>
+          <li><span class="client-chip"><img src="logos/temer.png" alt="" loading="lazy" decoding="async" width="208" height="104"></span></li>
+          <li><span class="client-chip"><img src="logos/intelmotion.png" alt="" loading="lazy" decoding="async" width="208" height="104"></span></li>
+          <li><span class="client-chip"><img src="logos/pluto.png" alt="" loading="lazy" decoding="async" width="208" height="104"></span></li>
+          <li><span class="client-chip client-chip--bleed"><img src="logos/jenboro.png" alt="" loading="lazy" decoding="async" width="208" height="104"></span></li>
+          <li><span class="client-chip"><img src="logos/alea.png" alt="" loading="lazy" decoding="async" width="208" height="104"></span></li>
+        </ul>
       </div>
     </div>
   </section>
@@ -996,9 +1073,9 @@ async function init(){
   };
 
   const scene = new THREE.Scene();
-  scene.fog = new THREE.Fog(0x0E0E0E, 14, 34);
+  scene.fog = new THREE.Fog(0x0E0E0E, 26, 52);   /* pushed back so the tower is not washed out */
   const camera = new THREE.PerspectiveCamera(34, 1, 0.1, 100);
-  camera.position.set(0, 1.0, 16.2);
+  camera.position.set(0, 1.0, 14.6);
 
   /* tower dimensions: 5 bays wide, 2 deep, 8 floors, slender high-rise massing */
   const BAY = 0.92, FLOOR = 1.06, BAYS_X = 5, BAYS_Z = 2, FLOORS = 8;
@@ -1006,7 +1083,8 @@ async function init(){
   const baseY = -3.9;
 
   const tower = new THREE.Group();
-  tower.position.set(4.3, 0, 0);
+  tower.position.set(4.85, 0.85, 0);   /* base on the lower edge, mass bleeding off the right */
+  tower.scale.setScalar(1.18);        /* more of the frame on the right */
   scene.add(tower);
 
   /* lighting: one cool key, one faint red rim from below */
@@ -1014,11 +1092,11 @@ async function init(){
   const key = new THREE.DirectionalLight(0xBFD3E6, 3.4);
   key.position.set(-6, 9, 7);
   scene.add(key);
-  const rim = new THREE.PointLight(0xE12500, 26, 24, 2);
-  rim.position.set(4.3, baseY - 2.2, 3.4);
+  const rim = new THREE.PointLight(0xE12500, 34, 26, 2);
+  rim.position.set(4.85, baseY - 2.2, 3.4);
   scene.add(rim);
   const sweep = new THREE.PointLight(0xFFE2D8, 0, 16, 2);
-  sweep.position.set(4.3 - W / 2, baseY, 3.2);
+  sweep.position.set(4.85 - W / 2, baseY, 3.2);
   scene.add(sweep);
 
   /* ---- wireframe lattice: line segments sorted bottom-up for draw-in ---- */
@@ -1050,13 +1128,13 @@ async function init(){
   const lineGeo = new THREE.BufferGeometry();
   lineGeo.setAttribute('position', new THREE.BufferAttribute(linePos, 3));
   lineGeo.setDrawRange(0, 0);
-  const lineMat = new THREE.LineBasicMaterial({ color: 0x5C5C5C, transparent: true, opacity: 1 });
+  const lineMat = new THREE.LineBasicMaterial({ color: 0x9AA0A6, transparent: true, opacity: 1 });
   const wire = new THREE.LineSegments(lineGeo, lineMat);
   tower.add(wire);
 
   /* ---- solid beams: one instanced mesh ---- */
   const beamMat = new THREE.MeshStandardMaterial({
-    color: 0x2A2A2A, metalness: 0.6, roughness: 0.45, transparent: true, opacity: 0
+    color: 0x3E3E3E, metalness: 0.6, roughness: 0.45, transparent: true, opacity: 0
   });
   const beamDefs = [];
   colPts.forEach(([x, z]) => beamDefs.push({ p: [x, baseY + H/2, z], s: [0.07, H, 0.07] }));
@@ -1127,7 +1205,7 @@ async function init(){
 
   function applyP(p){
     /* phase 1: wireframe draws in, bottom to top; a base frame is always present */
-    const wf = Math.max(clamp01(p / 0.3), 0.16);
+    const wf = Math.max(clamp01(p / 0.3), 0.44);   /* header starts on a standing frame */
     lineGeo.setDrawRange(0, Math.floor(segs.length * wf) * 2);
     lineMat.opacity = 1 - 0.8 * clamp01((p - 0.4) / 0.3);
     wire.visible = lineMat.opacity > 0.05 && wf > 0;
@@ -1200,7 +1278,7 @@ async function init(){
     state.cpx += (state.px - state.cpx) * 0.05;
     state.cpy += (state.py - state.cpy) * 0.05;
     const a = Math.sin(t * 0.00022) * (4 * Math.PI / 180);
-    camera.position.x = Math.sin(a) * 16.2 * 0.35 + state.cpx * 0.9;
+    camera.position.x = Math.sin(a) * 14.6 * 0.35 + state.cpx * 0.9;
     camera.position.y = 1.0 - state.cpy * 0.5;
     camera.lookAt(look);
     renderer.render(scene, camera);
