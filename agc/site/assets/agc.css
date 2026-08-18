@@ -757,14 +757,26 @@ header.site-nav{z-index:50;}
 .svc-index-list a:hover,.svc-index-list a:focus-visible{border-color:var(--red);color:var(--paper);}
 
 /* a service block that carries a photograph in its left column */
-.svc-fig{margin-top:30px;}
+.svc-fig{margin-top:28px;}
+.svc-fig picture{display:block;overflow:hidden;background:#141414;}
 .svc-fig img{
-  width:100%;height:auto;display:block;
-  filter:saturate(.82) contrast(1.04);
+  width:100%;height:auto;display:block;aspect-ratio:16/10;object-fit:cover;
+  filter:saturate(.62) contrast(1.05) brightness(.9);
+  transition:filter .4s var(--ease-out), transform .5s var(--ease-out);
 }
+.svc:hover .svc-fig img{filter:saturate(.85) contrast(1.05) brightness(1);transform:scale(1.02);}
 .svc-fig figcaption{
   margin-top:12px;font-size:12.5px;color:var(--muted);line-height:1.5;
   border-left:2px solid var(--red);padding-left:12px;
+}
+/* marks a stock placeholder that still needs real AGC photography */
+.fig-ph{
+  display:inline-block;margin-left:6px;padding:2px 7px;
+  border:1px solid rgba(225,37,0,.5);background:rgba(225,37,0,.1);
+  color:#FF7A5C;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+}
+@media (prefers-reduced-motion: reduce){
+  .svc:hover .svc-fig img{transform:none;}
 }
 .svc-body p a,.sec-dek a,.prose a{
   color:var(--paper);text-decoration:underline;text-underline-offset:3px;
